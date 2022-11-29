@@ -1,36 +1,18 @@
 import sys,time,csv
 
-N = open("Narrator_line.csv").read().splitlines()
-N1 = [x.split(',')for x in N]
-N_head = N[0]
-Narrator_line = {key:[sub[idx] for sub in N[1:]] for idx, key in enumerate(N_head)}
+def open_line_files(filename):
+    a = open(filename).read().splitlines()
+    b = [x.split(',') for x in a]
+    c = b[0]
+    line = {key: [sub[idx] for sub in a[1:]] for idx, key in enumerate(c)}
+    return line
 
-
-S = open("Samantha_line.csv").read().splitlines()
-S1 = [x.split(",") for x in S]
-S_head = S1[0]
-Samantha_line = {key:[sub[idx] for sub in S[1:]] for idx, key in enumerate(S_head)}
-
-K = open("Karczel_line.csv").read().splitlines()
-K1 = [x.split(',')for x in K]
-K_head = K1[0]
-Karczel_line = {key:[sub[idx] for sub in K[1:]] for idx, key in enumerate(K_head)}
-
-O = open("Omisha_line.csv").read().splitlines()
-O1 = [x.split(',')for x in O]
-O_head = O1[0]
-Omisha_line = {key:[sub[idx] for sub in O[1:]] for idx, key in enumerate(O_head)}
-
-
-Z = open("Zahur_line.csv").read().splitlines()
-Z1 = [x.split(',')for x in Z]
-Z_head = K1[0]
-Zahur_line = {key:[sub[idx] for sub in Z[1:]] for idx, key in enumerate(Z_head)}
-
-P1 = open('Person1.csv').read().splitlines()
-P11 = [x.split for x in P1]
-P1_head = P1[0]
-Person1_line = {key:[sub[idx] for sub in P1[1:]] for idx, key in enumerate(P1_head)}
+Narrator_line = open_line_files("Narrator_line.csv")
+Samantha_line = open_line_files("Samantha_line.csv")
+Karczel_line = open_line_files("Karczel_line.csv")
+Omisha_line = open_line_files("Omisha_line.csv")
+Zahur_line = open_line_files("Zahur_line.csv")
+Person1_line = open_line_files("Person1.csv")
 
 def add_item(li_st, items):
     li_st.append(items)
@@ -45,11 +27,11 @@ def slowprint(s):
         time.sleep(2./10)
 
 def character_lines(character_name,s):
+    f = []
     for i in s + '\n':
         a = character_name + ': ' + i
-        sys.stdout.write(a)
-        sys.stdout.flush()
-        time.sleep(2./10)
+        f.append(a)
+    return f
 
 Samantha_lines = character_lines('Samantha',Samantha_line)
 Karcze_lines = character_lines('Karczel',Karczel_line)
