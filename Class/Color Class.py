@@ -1,2 +1,5 @@
 class Color
-    def __init__(self,r,g,b):
+    def __init__(self, red, green, blue):
+        self.r = red
+        self.g = green
+        self.b = blue
