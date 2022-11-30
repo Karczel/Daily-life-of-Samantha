@@ -50,12 +50,13 @@ Samantha = Samantha()
 
 # arrange line functions and variable
 
+
 # --- Start ---
 slowprint(Narrator_line[0])
 input = False
 while input == False:
-    real_input = lower(input)
-    if lowercase(input) == a or lowercase(input) == b:
+    real_input = input.lower()
+    if real_input == a or real_input == b:
 else:
     print(f"Please type in one of the choices given: \n"
           f"{a} \n"
