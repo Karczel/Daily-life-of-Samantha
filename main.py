@@ -1,7 +1,7 @@
 import sys,time,csv
 def open_line_files(filename):
     line_list = open(filename).read().splitlines()
-    b = [x.split(',') for x in line_list]
+    b = [x.split(';') for x in line_list]
     c = b[0]
     line = {key: [sub[idx] for sub in line_list[1:]] for idx, key in enumerate(c)}
     return line
