@@ -63,9 +63,7 @@ turtle.forward(100)
 turtle.pd()
 curve(70,1,'left')
 
-# - Karczel -
-
-turtle.hideturtle()
+# - Karczel and Samantha
 
 window:object = turtle. Screen()
 window. exitonclick()
