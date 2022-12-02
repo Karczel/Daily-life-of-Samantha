@@ -1,0 +1,27 @@
+For people who wants to try drawing with python turtle like me
+First, plan out a simple drawing in a drawing template,
+ex. plain paper, digital drawing software like Krita or iArtbook
+then, trace of them then plot your turtle's path
+Like making trace the dots drawing books, but in a seperate layer from your drawing
+For people who use physical medium to plot your drawing, it would be wise to upload your drawings to your computer before plotting your turtle's path
+
+For coding,
+Make a curve function that can change direction to left/right
+Then make your turtle follow the path you've plotted
+It's hard to know turtle's output from eyesight
+But you can plot turtle's actions without definite distance
+Then, you can fix values to match your drawing
+Like bending wires to make shapes, but with turtle graphic
+I used a angle measurer to help tweaks lines faster
+But this is going to take a while
+as you're coding, ctrl+/ or command+/ the parts you don't need to check if your input is correct
+Work on adjusting from top to bottom, because the earlier codes affect later codes directly
+so, start a few days in advance of the deadline based on the complexity of your drawings
+
+* whole days: literally, all day you're coding, including during classes
+
+- Rounded time used to make graphic -
+1.The end = 3 whole days
+
+- Advice I haven't tried yet -
+It would be fantastic to be able to put in the plotted drawing inside the turtle canvas

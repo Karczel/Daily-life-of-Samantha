@@ -226,7 +226,7 @@ def curve(length,degree,direction):
 # # 62
 # turtle.pu()
 # turtle.right(58)
-# turtle.forward(94)
+# turtle.forward(93)
 #
 # # 63-65
 # turtle.pd()
@@ -254,125 +254,125 @@ def curve(length,degree,direction):
 # turtle.pu()
 # turtle.right(25)
 # turtle.forward(230)
-
-# 70
-turtle.pd()
-turtle.left(70)
-curve(100,0.75,'right')
-
-# 71
-turtle.left(85)
-curve(30,0.5,'right')
-
-# 72
-turtle.right(20)
-curve(20,0.5,'right')
-
-turtle.pu()
-turtle.right(60)
-turtle.forward(20)
-
-# 73
-turtle.pd()
-turtle.right(120)
-curve(40,0.5,'left')
-
-# 74
-turtle.left(30)
-curve(20,0.5,'left')
-
-# 75
-turtle.right(60)
-turtle.forward(25)
-
-# 76
-turtle.left(95)
-turtle.forward(20)
-
-# 77
-turtle.left(75)
-turtle.forward(10)
-
-# 78
-curve(10,10,'right')
-
-# 79
-turtle.forward(10)
-
-# 80
-turtle.left(150)
-turtle.forward(25)
-
-# 81
-turtle.left(45)
-curve(20,3,'left')
-
-# 82
-turtle.left(80)
-turtle.forward(15)
-
-turtle.pu()
-turtle.right(90)
-turtle.forward(25)
-
-# 83
-turtle.pd()
-turtle.right(115)
-turtle.pd()
-curve(25,0.2,'right')
-
-
-# 84
-turtle.right(30)
-curve(10,1,'right')
-
-turtle.pu()
-turtle.right(75)
-turtle.forward(30)
-
-# 85
-turtle.pd()
-turtle.right(60)
-curve(25,1,'right')
-
-# 86
-turtle.left(150)
-curve(15,1.5,'left')
-
-turtle.pu()
-turtle.right(90)
-turtle.forward(15)
-
-# 87
-turtle.pd()
-turtle.right(60)
-curve(10,2,'right')
-
-turtle.pu()
-turtle.right(60)
-turtle.forward(30)
-
-# 88
-turtle.pd()
-turtle.right(45)
-curve(25,1,'left')
-
-# 89
-turtle.pu()
-turtle.right(115)
-turtle.forward(90)
-
-# 90
-turtle.pd()
-turtle.left(53)
-curve(50,0.8,'left')
-
-# 91
-turtle.right(15)
-curve(50,0.5,'left')
+#
+# # 70
+# turtle.pd()
+# turtle.left(70)
+# curve(40,0.75,'right')
+#
+# # 71
+# turtle.left(56)
+# curve(45-5,0.75,'right')
+#
+# # 72
+# turtle.right(10)
+# curve(25-5,0.5,'right')
+#
+# turtle.pu()
+# turtle.right(52)
+# turtle.forward(12-5)
+#
+# # 73
+# turtle.pd()
+# turtle.right(112)
+# curve(45-5,0.8,'left')
+#
+# # 74
+# turtle.left(51)
+# curve(20-5,0.8,'left')
+#
+# # 75
+# turtle.right(49)
+# turtle.forward(15-5)
+#
+# # 76
+# turtle.left(120)
+# turtle.forward(18-5)
+#
+# # 77
+# turtle.left(59)
+# turtle.forward(3)
+#
+# # 78
+# curve(10,7,'right')
+#
+# # 79
+# turtle.forward(5)
+#
+# # 80
+# turtle.left(92)
+# turtle.forward(20-5)
+#
+# # 81
+# turtle.left(83)
+# curve(20-5,3,'left')
+#
+# # 82
+# turtle.left(23)
+# turtle.forward(15-5)
+#
+# turtle.pu()
+# turtle.right(54)
+# turtle.forward(10-5)
+#
+# # 83
+# turtle.pd()
+# turtle.right(112)
+# curve(25-5,0.15,'right')
+#
+#
+# # 84
+# turtle.right(17)
+# curve(20-5,1.5,'right')
+#
+# turtle.pu()
+# turtle.right(60)
+# turtle.forward(35-10)
+#
+# # 85
+# turtle.pd()
+# turtle.right(74)
+# curve(25-5,1,'right')
+#
+# # 86
+# turtle.left(139)
+# curve(28-10,1.5,'left')
+#
+# turtle.pu()
+# turtle.right(90)
+# turtle.forward(10)
+#
+# # 87
+# turtle.pd()
+# turtle.right(94)
+# curve(10-8,3,'right')
+#
+# turtle.pu()
+# turtle.right(30)
+# turtle.forward(76)
+#
+# # 88
+# turtle.pd()
+# turtle.right(70)
+# curve(30-15,1.5,'right')
+#
+# # 89
+# turtle.pu()
+# turtle.right(199)
+# turtle.forward(212)
+#
+# # 90
+# turtle.pd()
+# turtle.left(60)
+# curve(180,0.55,'left')
+#
+# # 91
+# turtle.right(20)
+# curve(142,0.55,'left')
 
 # 92
-turtle.forward(200)
+turtle.left(21)
+turtle.forward(150)
 
 # 93
 curve(25,2,'left')
@@ -383,11 +383,11 @@ turtle.forward(25)
 # 95
 turtle.pu()
 turtle.right(5)
-turtle.forward(40)
+turtle.forward(25)
 
 # 96
 turtle.pd()
-turtle.right(87)
+turtle.right(60)
 curve(20,4,'right')
 
 # 97
@@ -406,12 +406,13 @@ turtle.right(10)
 curve(25,1,'right')
 
 # 101
-curve(10,7,'right')
+curve(15,7,'right')
 
 # 102
-curve(7,9,'left')
+curve(12,9,'left')
 
 # 103
+turtle.left(30)
 turtle.forward(10)
 
 # 104
