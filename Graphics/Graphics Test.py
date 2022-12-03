@@ -368,22 +368,22 @@ curve(110,0.9,'left')
 
 # 91
 turtle.right(25)
-curve(71,1,'left')
+curve(70,1,'left')
 
 # 92
-turtle.left(13)
+turtle.left(12.3)
 turtle.forward(150)
 
 # 93
 curve(25,2,'left')
 
 # 94
-turtle.forward(25)
+turtle.forward(40)
 
 # 95
 turtle.pu()
 turtle.right(5)
-turtle.forward(50)
+turtle.forward(54)
 
 # 96
 turtle.pd()
@@ -391,14 +391,14 @@ turtle.right(30)
 curve(20,4,'right')
 
 # 97
-turtle.forward(50)
+turtle.forward(30)
 
 # 98
 turtle.left(5)
 curve(20,7,'left')
 
 # 99
-turtle.right(180+20)
+turtle.right(180-15)
 turtle.forward(10)
 
 # 100
@@ -406,57 +406,57 @@ turtle.right(10)
 curve(25,0.5,'right')
 
 # 101
-curve(15,7,'right')
+curve(20,5,'right')
 
 # 102
-curve(12,7,'left')
+curve(17,5,'left')
 
 # 103
-turtle.left(30)
+turtle.left(25)
 turtle.forward(10)
 
 # 104
 turtle.left(180 - 20)
-curve(10,9,'right')
+curve(15,7,'right')
 
 # 105
 curve(40,3,'left')
 
 # 106
-turtle.right(180)
+turtle.right(180-10)
 turtle.forward(30)
 
 # 107
 curve(50,2,'right')
 
 # 108
-turtle.left(30)
-curve(40,0.5,'left')
+turtle.left(45)
+curve(25,0.5,'left')
 
 # 109
 turtle.right(10)
 curve(60,0.5,'right')
 
 # 110
-turtle.left(10)
-turtle.forward(20)
+turtle.right(8)
+turtle.forward(85)
 
 turtle.pu()
-turtle.left(87)
-turtle.forward(20)
+turtle.left(139)
+turtle.forward(28)
 
 # 111
 turtle.pd()
-turtle.left(80)
+turtle.left(5)
 curve(20,0.5,'right')
 
 # 112
-turtle.right(20)
+turtle.right(15)
 turtle.forward(30)
 
 # 113
 turtle.right(30)
-curve(20,0.5,'right')
+curve(28,0.5,'right')
 
 # 114
 turtle.right(10)
@@ -464,19 +464,19 @@ curve(20,7,'right')
 
 # 115
 turtle.pu()
-turtle.right(30)
+turtle.right(0)
 turtle.forward(10)
 
 # 116
 turtle.pd()
-turtle.right(110)
-turtle.forward(10)
+turtle.right(50)
+turtle.forward(15)
 
 # 117
 curve(7,7,'left')
 
 # 118
-turtle.left(65)
+turtle.left(20)
 turtle.forward(15)
 
 # 119
@@ -485,10 +485,10 @@ turtle.forward(15)
 
 # 120
 turtle.left(50)
-turtle.forward(30)
+turtle.forward(25)
 
 # 121
-turtle.left(75)
+turtle.left(80)
 turtle.forward(5)
 
 # 122
@@ -500,8 +500,8 @@ turtle.left(10)
 turtle.forward(5)
 
 # 124
-turtle.left(60)
-turtle.forward(10)
+turtle.left(70)
+turtle.forward(15)
 
 # 125
 turtle.left(120)
@@ -509,31 +509,32 @@ turtle.forward(5)
 
 turtle.pu()
 turtle.right(120)
-turtle.forward(5)
+turtle.forward(8)
 
 # 126-128
 turtle.pd()
-turtle.right(80)
-curve(10,10,'left')
-curve(10,10,'right')
-curve(10,10,'left')
+turtle.right(110)
+curve(15,8,'left')
+turtle.left(40)
+curve(10,8,'right')
+curve(12,8,'left')
 
 turtle.pu()
-turtle.left(90)
-turtle.forward(6)
+turtle.left(70)
+turtle.forward(5)
 
 # 129
 turtle.pd()
-turtle.right(30)
-curve(20,0.5,'right')
+turtle.right(10)
+curve(10,0.5,'right')
 
 # 130
 turtle.left(20)
-turtle.forward(20)
+turtle.forward(13)
 
 # 131
 turtle.left(20)
-turtle.forward(20)
+turtle.forward(15)
 
 turtle.pu()
 turtle.left(60)
@@ -542,57 +543,58 @@ turtle.forward(15)
 # 132
 turtle.pd()
 turtle.left(120)
-curve(5,15,'right')
+curve(8,15,'right')
 
 turtle.pu()
 turtle.left(90)
-turtle.forward((10))
+turtle.forward(5)
 
 # 133
 turtle.pd()
-turtle.left(90)
+turtle.left(75)
 turtle.forward(10)
 
 # 134
 turtle.right(5)
-curve(8,1,'right')
+curve(10,1,'right')
 
 turtle.pu()
-turtle.left(20)
-turtle.forward(15)
+turtle.right(25)
+turtle.forward(48)
 
 # 135
 turtle.pd()
 turtle.right(15)
-curve(50,0.5,'right')
+curve(50,0.8,'right')
 
 
 # 136
-turtle.right(90)
-curve(20,2,'left')
+turtle.right(75)
+curve(40,2,'left')
 
 # 137
-turtle.forward(50)
+turtle.left(15)
+turtle.forward(70)
 
 # 138
 turtle.right(100)
-turtle.forward(20)
+turtle.forward(30)
 
 # 139
-turtle.left(150)
-curve(50,0.25,'left')
+turtle.left(60)
+curve(45,0.8,'left')
 
 # 140
-turtle.right(30)
-curve(50,0.3,'right')
+turtle.right(87)
+curve(66,1,'right')
 
 turtle.pu()
-turtle.left(180)
-turtle.forward(50)
+turtle.left(180+25)
+turtle.forward(118)
 
 # 141
 turtle.pd()
-turtle.left(80)
+turtle.right(110)
 turtle.forward(20)
 
 # 142
@@ -608,50 +610,51 @@ turtle.right(30)
 turtle.forward(25)
 
 # 145
-turtle.right(120)
-turtle.forward(15)
+turtle.right(140)
+turtle.forward(20)
 
 # 146
-turtle.right(90)
-curve(40,2,'left')
+turtle.right(42)
+curve(40,1,'left')
 
 # 147
 turtle.forward(10)
 
 # 148
-turtle.right(75)
-curve(100,0.5,'left')
+turtle.right(30)
+curve(150,0.2,'left')
 
 # 149
-turtle.left(80)
-turtle.forward(15)
+turtle.left(60)
+turtle.forward(30)
 
 # 150
-turtle.left(85)
-turtle.forward(70)
+turtle.left(60)
+turtle.forward(40)
 
 # 151
-turtle.left(60)
-turtle.forward(80)
+turtle.right(30)
+turtle.forward(70)
 
 # 152 - 154
-turtle.right(30)
+turtle.right(60)
 turtle.forward(30)
-turtle.left(25)
-turtle.forward(15)
-turtle.left(90)
-turtle.forward(80)
+turtle.left(45)
+turtle.forward(40)
+turtle.left(85)
+turtle.forward(40)
 
 # 155
-turtle.left(20)
-turtle.forward(120)
+turtle.left(15)
+turtle.forward(150)
 
 # 156 -158
 turtle.right(90)
 turtle.forward(50)
 turtle.left(90)
+turtle.forward(25)
+turtle.left(48)
 turtle.forward(80)
-turtle.left(30)
 
 turtle.pu()
 turtle.backward(45)

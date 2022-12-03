@@ -1,5 +1,5 @@
 class Karczel:
-    def __init__(self,items=[],clothing=[],closet=[],dinner=False,location='???',palette={}):
+    def __init__(self,items=[],clothing=[],dinner=False,location='???',palette={}):
         self.items = items
         self.closet = closet
         self.clothing = clothing
@@ -25,7 +25,22 @@ class Karczel:
             elif clothing_type(clothing) == "Lower half":
                 if
             elif clothing_type(clothing) == "Socks":
-                if
+                if async
 
+        @property
+        def get_items(self):
+            return self.items
+        @property
+        def get_clothing(self):
+            return self.clothing
+        @property
+        def get_dinner(self):
+            return self.dinner
+        @property
+        def get_location(self):
+            return self.location
+        @property
+        def get_palette(self):
+            return self.palette
 
 

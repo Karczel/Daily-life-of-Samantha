@@ -20,8 +20,16 @@ so, start a few days in advance of the deadline based on the complexity of your 
 <br />
 * whole days: literally, all day you're coding, including during classes<br />
 <br />
+* (+): Unfinished graphics
 --- Rounded time used to make graphic ---<br />
-1.The end = 3 whole days<br />
+1.The end = 3 whole days and a half (+) <br />
 <br />
 --- Advice I haven't tried yet ---<br />
-It would be fantastic to be able to put in the plotted drawing inside the turtle canvas<br />
+* It would be fantastic to be able to put in the plotted drawing inside the turtle canvas<br />
+* Is there a way to scroll the turtle's path up to the point you have to fix, and only alter paths that mattered and show the difference immediately?, it could make this from 3 whole days to just 3 hours
+* make a seperate visualization app and make it code building blocks
+
+Log 1, 3/12/2022
+managed to finish mid to Samantha body, I supposed this is only up to as much as the deadline allows me
+
+

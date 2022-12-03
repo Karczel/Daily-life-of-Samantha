@@ -1,4 +1,5 @@
 import sys,time,csv
+import Samantha_Class,Zahur_Class,Omisha_Class,Karczel_Class,Clothing_Class,Cat_Class,Person_Class,Person_Class
 
 Narrator_line_list = open(filename).read().splitlines()
 b = [x.split(';') for x in Narrator_line_list]
@@ -16,6 +17,13 @@ Omisha_line = open_character_line_files("Omisha_line.csv")
 Zahur_line = open_character_line_files("Zahur_line.csv")
 Person1_line = open_character_line_files("Person1.csv")
 
+def open_color_in_cloth(filename):
+    color_lists = open(filename).read().splitlines()
+    color_split = [x.split(" ") for x in color_lists]
+    color = []
+    for i in color_split:
+        color.append(Color(i[0],i[1],i[2]))
+    return color
 def open_palette_files(filename):
     palette_list = open(filename).read().splitlines()
     for i in palette_list:
@@ -27,14 +35,19 @@ K_palette = open_palette_files("Karczel_palette.csv")
 O_palette = open_palette_files("Omisha_palette.csv")
 Z_palette = open_palette_files("Zahur_palette.csv")
 
+def closet(**kwargs):
+    for key, value in kwargs.
 def open_clothing_files(filename):
     clothing_list = open(filename).read().splitlines()
     for i in clothing_list:
         i.split(',')
+        for j in i[2]:
+            j.split(' ')
     return {key: [sub[idx] in clothing_list] for idx, key in enumerate(clothing_list[0])}
 
-S_clothing = open_clothing_files('Sam clothing.csv')
-K_clothing = open_clothing_files('Karczel clothing.csv')
+S_c = open_clothing_files('Sam clothing.csv')
+K_c = open_clothing_files('Karczel clothing.csv')
+
 def slowprint(s):
     for c in s + '\n':
         sys.stdout.write(c)
@@ -60,13 +73,14 @@ Person1_line = character_lines('Random person',Person1_line)
 table = [ ]
 
 
-# class TurtleGraphi
 
+# Build characters
+sam = Samantha(,player,10000,,,S_palette)
+karczel = Karczel()
 
-sam = Samantha(,S_palette)
-
-# arrange line functions and variable
-
+# Build Closets
+Closet =
+sams_cloth = {Clothing(,S_clothing,) for i in }
 
 # --- Start ---
 slowprint(Narrator_line[0])
