@@ -1,4 +1,5 @@
 import sys,time,csv
+import Clothing,Graphics,Classes
 import Samantha_Class,Zahur_Class,Omisha_Class,Karczel_Class,Clothing_Class,Cat_Class,Person_Class,Person_Class
 
 Narrator_line_list = open(filename).read().splitlines()
@@ -35,15 +36,16 @@ K_palette = open_palette_files("Karczel_palette.csv")
 O_palette = open_palette_files("Omisha_palette.csv")
 Z_palette = open_palette_files("Zahur_palette.csv")
 
-def closet(**kwargs):
-    for key, value in kwargs.
 def open_clothing_files(filename):
     clothing_list = open(filename).read().splitlines()
     for i in clothing_list:
         i.split(',')
         for j in i[2]:
             j.split(' ')
+            # [[i[0],i[1],[r,g,b]]
     return {key: [sub[idx] in clothing_list] for idx, key in enumerate(clothing_list[0])}
+# {1:i[1] 2:i[2] 3:[r,g,b]}
+# get => for i,j in dict find name index > return same index from other category
 
 S_c = open_clothing_files('Sam clothing.csv')
 K_c = open_clothing_files('Karczel clothing.csv')
@@ -79,23 +81,50 @@ sam = Samantha(,player,10000,,,S_palette)
 karczel = Karczel()
 
 # Build Closets
-Closet =
-sams_cloth = {Clothing(,S_clothing,) for i in }
+sam_closet = [Clothing(i['type'],i['clothing'],i['color'][0],i['color'][1],i['color'][2]) for i in S_c]
+karczel_closet = [Clothing(i['type'],i['clothing'],i['color'][0],i['color'][1],i['color'][2]) for i in K_c]
 
 # --- Start ---
-slowprint(Narrator_line[0])
-input = False
-while input == False:
-    real_input = input.lower()
-    if real_input == a or real_input == b:
-else:
-    print(f"Please type in one of the choices given: \n"
-          f"{a} \n"
-          f"{b}")
-if real_input == a:
-    while
-elif real_input == b:
-    while
+play = True
+choice = False
+while play != False:
+    while choice:
+        available_choices = []
+        for i in Narrator_line:
+            if i['Order'][0:2] == '00':
+                available_choices.append({i['Choice Number'],i['Choice']})
+                slowprint(Narrator_line[i]['Question'])
+                print(f"Please type in one of the choices given: \n"
+                  f"{available_choices[]} \n"
+                  f"{available_choices[]}")
+        choice = input()
+        available_choices = []
+        for i in Narrator_line:
+            if i['Order'][0:3] == '000':
+                available_choices.append(i['Choice'])
+        if choice in []:
+            if real_input == a:
+                choice = True
+    if choice == a:
+        for i in Narrator_line:
+            if i['Order'] == '0100000':
+                slowprint(i['Result'])
+        choice = False
+        while choice:
+    elif real_input == b:
+        slowprint()
 
+    # Replay?
+    play_y_n = input('Do you still want to play?(Yes/No): ')
+    while play_y_n.lower() != 'yes' or play_y_n.lower() != 'no':
+        play_y_n = input('Do you still want to play?(Yes/No): ')
+        if play_y_n.lower() == 'yes':
+            play == True
+        elif play == False:
+            break
+        else:
+            print('Please input the right answer')
+
+print("You've finished playing, have a nice day~")
 
 # --- End ---
