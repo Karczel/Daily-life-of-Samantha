@@ -75,9 +75,9 @@ Person1_line = character_lines('Random person',Person1_line)
 table = [ ]
 
 
-
+player = input("Player name: ")
 # Build characters
-sam = Samantha(,player,10000,,,S_palette)
+sam = Samantha('Samantha',player,10000,[],{},False,S_palette)
 karczel = Karczel()
 
 # Build Closets
@@ -91,27 +91,179 @@ while play != False:
     while choice:
         available_choices = []
         for i in Narrator_line:
+            # 000000 question
             if i['Order'][0:2] == '00':
+                question = i['Question']
                 available_choices.append({i['Choice Number'],i['Choice']})
-                slowprint(Narrator_line[i]['Question'])
-                print(f"Please type in one of the choices given: \n"
-                  f"{available_choices[]} \n"
-                  f"{available_choices[]}")
+        slowprint(question+'\n')
+        slowprint("Please type in one of the choices given: \n")
+        for k,v in available_choices:
+            print(f"{k}:{v} \n")
         choice = input()
-        available_choices = []
+        if choice in list(available_choices.values().lower()) or choice in list(available_choices.keys()):
+            choice = True
+        else:
+            print('Wrong answer')
+    if choice == available_choices['1'].lower() or choice == '1':
         for i in Narrator_line:
-            if i['Order'][0:3] == '000':
-                available_choices.append(i['Choice'])
-        if choice in []:
-            if real_input == a:
-                choice = True
-    if choice == a:
-        for i in Narrator_line:
-            if i['Order'] == '0100000':
+            # 000 choice 1
+            if i['Order'][0:2] == '00' and i['Choice Number'] == '1':
                 slowprint(i['Result'])
         choice = False
         while choice:
-    elif real_input == b:
+            available_choices = []
+            for i in Narrator_line:
+                # 010 question
+                if i['Order'][0:3] == '010':
+                    question = i['Question']
+            available_choices.append({i['Choice Number'], i['Choice']})
+            slowprint(question+'\n')
+            print(f"Please type in one of the choices given: \n")
+            for k, v in available_choices:
+                print(f"{k}:{v} \n")
+            choice = input()
+            if choice in list(available_choices.values().lower()) or choice in list(available_choices.keys()):
+                choice = True
+            else:
+                print('Wrong answer')
+        if choice == available_choices['1'].lower() or choice == '1':
+            for i in Narrator_line:
+                # 010 choice 1
+                if i['Order'][0:2] == '00' and i['Choice Number'] == '1':
+                    slowprint(i['Result'])
+            choice = False
+            while choice:
+                available_choices = []
+                for i in Narrator_line:
+                    # 0110 question
+                    if i['Order'][0:3] == '010':
+                        question = i['Question']
+                available_choices.append({i['Choice Number'], i['Choice']})
+                slowprint(question+'\n')
+                print(f"Please type in one of the choices given: \n")
+                for k, v in available_choices:
+                    print(f"{k}:{v} \n")
+                choice = input()
+                if choice in list(available_choices.values().lower()) or choice in list(available_choices.keys()):
+                    choice = True
+                else:
+                    print('Wrong answer')
+            if choice == available_choices['1'].lower() or choice == '1':
+                for i in Narrator_line:
+                    # 0110 choice 1
+                    if i['Order'][0:2] == '00' and i['Choice Number'] == '1':
+                        slowprint(i['Result'])
+                choice = False
+                while choice:
+                    available_choices = []
+                    for i in Narrator_line:
+                        # 01110 question
+                        if i['Order'][0:3] == '010':
+                            question = i['Question']
+                    available_choices.append({i['Choice Number'], i['Choice']})
+                    slowprint(question+'\n')
+                    print(f"Please type in one of the choices given: \n")
+                    for k, v in available_choices:
+                        print(f"{k}:{v} \n")
+                    choice = input()
+                    if choice in list(available_choices.values().lower()) or choice in list(available_choices.keys()):
+                        choice = True
+                    else:
+                        print('Wrong answer')
+                if choice == available_choices['1'].lower() or choice == '1':
+                    for i in Narrator_line:
+                        # 01110 choice 1
+                        if i['Order'][0:2] == '00' and i['Choice Number'] == '1':
+                            slowprint(i['Result'])
+                    choice = False
+                    while choice:
+                        available_choices = []
+                        for i in Narrator_line:
+                            # 011110 question
+                            if i['Order'][0:3] == '010':
+                                question = i['Question']
+                        available_choices.append({i['Choice Number'], i['Choice']})
+                        slowprint(question+'\n')
+                        print(f"Please type in one of the choices given: \n")
+                        for k, v in available_choices:
+                            print(f"{k}:{v} \n")
+                        choice = input()
+                        if choice in list(available_choices.values().lower()) or choice in list(
+                                available_choices.keys()):
+                            choice = True
+                        else:
+                            print('Wrong answer')
+                    if choice == available_choices['1'].lower() or choice == '1':
+                        for i in Narrator_line:
+                            # 011110 choice 1
+                            if i['Order'][0:2] == '00' and i['Choice Number'] == '1':
+                                slowprint(i['Result'])
+                        choice = False
+                        while choice:
+                            available_choices = []
+                            for i in Narrator_line:
+                                # 0111110 question
+                                if i['Order'][0:3] == '010':
+                                    question = i['Question']
+                            available_choices.append({i['Choice Number'], i['Choice']})
+                            slowprint(question+'\n')
+                            print(f"Please type in one of the choices given: \n")
+                            for k, v in available_choices:
+                                print(f"{k}:{v} \n")
+                            choice = input()
+                            if choice in list(available_choices.values().lower()) or choice in list(
+                                    available_choices.keys()):
+                                choice = True
+                            else:
+                                print('Wrong answer')
+                        if choice == available_choices['1'].lower() or choice == '1':
+                            for i in Narrator_line:
+                                # 0111110 choice 1
+                                if i['Order'][0:2] == '00' and i['Choice Number'] == '1':
+                                    slowprint(i['Result'])
+                            choice = False
+                            while choice:
+                                available_choices = []
+                                for i in Narrator_line:
+                                    # 01111110 question
+                                    if i['Order'][0:3] == '010':
+                                        question = i['Question']
+                                available_choices.append({i['Choice Number'], i['Choice']})
+                                slowprint(question+'\n')
+                                print(f"Please type in one of the choices given: \n")
+                                for k, v in available_choices:
+                                    print(f"{k}:{v} \n")
+                                choice = input()
+                                if choice in list(available_choices.values().lower()) or choice in list(
+                                        available_choices.keys()):
+                                    choice = True
+                                else:
+                                    print('Wrong answer')
+
+            if choice == available_choices['2'].lower() or choice == '2':
+
+    elif choice == available_choices['2'].lower() or choice == '2':
+        for i in Narrator_line:
+            # 000 choice 2
+            if i['Order'][0:2] == '00' and i['Choice Number'] == '2':
+                slowprint(i['Result'])
+        choice = False
+        while choice:
+            for i in Narrator_line:
+                # 020 question
+                if i['Order'][0:3] == '010':
+                    question = i['Question']
+                    available_choices.append({i['Choice Number'], i['Choice']})
+            slowprint(question)
+            print(f"Please type in one of the choices given: \n")
+            for k, v in available_choices:
+                print(f"{k}:{v} \n")
+                choice = input()
+                if choice in list(available_choices.values()):
+                    choice = True
+                else:
+                    print('Wrong answer')
+        if choice == available_choices[]
         slowprint()
 
     # Replay?

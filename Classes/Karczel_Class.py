@@ -1,5 +1,5 @@
 class Karczel:
-    def __init__(self,items=[],clothing=[],dinner=False,location='???',palette={}):
+    def __init__(self,items=[],clothing={},dinner=False,location='???',palette={}):
         self.items = items
         self.closet = closet
         self.clothing = clothing
@@ -10,22 +10,47 @@ class Karczel:
         def remove_clothing(self, clothing):
             self.pop(clothing)
 
-        def wear_clothing(self, clothing):
-            self.append(clothing)
+        def wear_clothing(self, clothing_type, clothing):
+            self.update[clothing_type] = clothing
 
-        def change_clothing(self, clothing):
-            if clothing_type(clothing) == "Jacket":
-                if self.clothing in typeof clothing:
-            elif clothing_type(clothing) == 'Shoes':
-                if
-            elif clothing_type(clothing) == 'Dress':
-                if
-            elif clothing_type(clothing) == 'Torso':
-                if
-            elif clothing_type(clothing) == "Lower half":
-                if
-            elif clothing_type(clothing) == "Socks":
-                if async
+        def change_clothing(self, clothing_type, clothing):
+            for k, v in self.clothing:
+                if clothing_type == "Jacket":
+                    if k == clothing_type:
+                        remove_clothing(self, k)
+                        wear_clothing(self, clothing_type, clothing)
+                    else:
+                        wear_clothing(clothing)
+                elif clothing_type == 'Shoes':
+                    if k == clothing_type:
+                        remove_clothing(self, k)
+                        wear_clothing(self, clothing_type, clothing)
+                    else:
+                        wear_clothing(clothing)
+                elif clothing_type == 'Dress':
+                    if k == clothing_type or k == 'Torso' or k == 'Lower half':
+                        remove_clothing(self, k)
+                        wear_clothing(self, clothing_type, clothing)
+                    else:
+                        wear_clothing(clothing)
+                elif clothing_type == 'Torso':
+                    if k == clothing_type or k == 'Dress':
+                        remove_clothing(self, k)
+                        wear_clothing(self, clothing_type, clothing)
+                    else:
+                        wear_clothing(clothing)
+                elif clothing_type == "Lower half" or k == 'Dress':
+                    if k == clothing_type:
+                        remove_clothing(self, k)
+                        wear_clothing(self, clothing_type, clothing)
+                    else:
+                        wear_clothing(clothing)
+                elif clothing_type == "Socks":
+                    if k == clothing_type:
+                        remove_clothing(self, k)
+                        wear_clothing(self, clothing_type, clothing)
+                    else:
+                        wear_clothing(clothing)
 
         @property
         def get_items(self):
