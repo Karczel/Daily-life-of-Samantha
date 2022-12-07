@@ -1,4 +1,7 @@
-import turtle,Samantha,Karczel
+import turtle
+# from Classes import Color_Class
+# Color_Class
+# def open_colors
 
 turtle.screensize(10000,10000,'white')
 def curve(length,degree,direction):

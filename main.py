@@ -1,4 +1,23 @@
-import sys,time,os
+import sys,time
+# Classes
+from Classes import Color_Class,Clothing_Class,Cat_Class,\
+    Omisha_Class,Karczel_Class,Samantha_Class,Zahur_Class
+# Graphics
+from Graphics import end_graphic
+
+# Pictures
+# The end
+# exec('end_graphic.py')
+# exec('Next pic')
+
+Clothing_Class
+Cat_Class
+Omisha_Class
+Color_Class
+Karczel_Class
+Samantha_Class
+Zahur_Class
+
 Narrator_line_list = open("Story_Output/Narrator_line.csv").read().splitlines()
 b = [x.split(';') for x in Narrator_line_list]
 c = b[0]
