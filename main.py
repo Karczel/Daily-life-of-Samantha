@@ -264,8 +264,8 @@ while play != False:
                     choice = True
                 else:
                     print('Wrong answer')
-        if choice == available_choices[]
-        slowprint()
+        if choice == available_choices[]:
+            slowprint()
 
     # The end
     exec('end_graphic')
