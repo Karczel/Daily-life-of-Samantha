@@ -1,4 +1,4 @@
-class Color
+class Color:
     def __init__(self, red, green, blue):
         self.r = red
         self.g = green
@@ -15,3 +15,6 @@ class Color
     @property
     def get_b(self):
         return self.b
+
+    def __repr__(self):
+        return f'{self.r} {self.g} {self.b}'

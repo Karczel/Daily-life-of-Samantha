@@ -1,31 +1,28 @@
 import sys,time
 # Classes
-from Classes import Color_Class,Clothing_Class,Cat_Class,\
-    Omisha_Class,Karczel_Class,Samantha_Class,Zahur_Class
+from Classes.Color_Class import Color
+from Classes.Omisha_Class import Omisha
+from Classes.Zahur_Class import Zahur
+from Classes.Karczel_Class import Karczel
+from Classes.Samantha_Class import Samantha
+from Classes.Clothing_Class import Clothing
+from Classes.Cat_Class import Cat
 # Graphics
 from Graphics import end_graphic
 
-# Pictures
-# The end
-# exec('end_graphic.py')
-# exec('Next pic')
+# # Pictures
+# # The end
+# exec('end_graphic')
 
-Clothing_Class
-Cat_Class
-Omisha_Class
-Color_Class
-Karczel_Class
-Samantha_Class
-Zahur_Class
 
 Narrator_line_list = open("Story_Output/Narrator_line.csv").read().splitlines()
 b = [x.split(';') for x in Narrator_line_list]
 c = b[0]
-Narrator_line = {key: [sub[idx] for sub in Narrator_line_list[1:]] for idx, key in enumerate(c)}
+Narrator_line = [{key: b[sub][idx] for idx, key in enumerate(c)}for sub in range(1,len(b))]
 def open_character_line_files(filename):
     line_lists = open(filename).read().splitlines()
     line_split = [x.split(';') for x in line_lists]
-    line = {texts[0]:[output for output in texts[1,len(texts-1)]] for texts in line_split}
+    line = [{key: line_split[sub][idx] for idx, key in enumerate(line_split[0])} for sub in range(1, len(line_split))]
     return line
 
 Samantha_line = open_character_line_files("Story_Output/Samantha_line.csv")
@@ -34,18 +31,10 @@ Omisha_line = open_character_line_files("Story_Output/Omisha_line.csv")
 Zahur_line = open_character_line_files("Story_Output/Zahur_line.csv")
 Person1_line = open_character_line_files("Story_Output/Person1.csv")
 
-def open_color_in_cloth(filename):
-    color_lists = open(filename).read().splitlines()
-    color_split = [x.split(" ") for x in color_lists]
-    color = []
-    for i in color_split:
-        color.append(Color(i[0],i[1],i[2]))
-    return color
 def open_palette_files(filename):
     palette_list = open(filename).read().splitlines()
-    for i in palette_list:
-        i.split(',')
-    return {i[0]: [Color(i[1], i[2], i[3])] for i in palette_list}
+    palette_split = [x.split(',') for x in palette_list]
+    return {i[0]: [Color(int(i[1]), int(i[2]), int(i[3]))] for i in palette_split}
 
 S_palette = open_palette_files("Graphics/Palette/Samantha_palette.csv")
 K_palette = open_palette_files("Graphics/Palette/Karczel_palette.csv")
@@ -54,26 +43,19 @@ Z_palette = open_palette_files("Graphics/Palette/Zahur_palette.csv")
 
 def open_clothing_files(filename):
     clothing_list = open(filename).read().splitlines()
-    for i in clothing_list:
-        i.split(',')
-        for j in i[2]:
-            j.split(' ')
-            # [[i[0],i[1],[r,g,b]]
-    return {key: [sub[idx] in clothing_list] for idx, key in enumerate(clothing_list[0])}
-# {1:i[1] 2:i[2] 3:[r,g,b]}
-# get => for i,j in dict find name index > return same index from other category
+    clothing_split1 = [x.split(',') for x in clothing_list]
+    clothing_split2 = [{key: clothing_split1[sub][index] for index, key in enumerate(clothing_split1[0])} for sub in range(1,len(clothing_split1))]
+    for i in clothing_split2:
+        i['color'] = i['color'].split(' ')
+        i['color'] = (Color(int(i['color'][0]), int(i['color'][1]), int(i['color'][2])))
+    return clothing_split2
 
 S_c = open_clothing_files('Clothing/Sam clothing.csv')
 K_c = open_clothing_files('Clothing/Karczel clothing.csv')
 
 def slowprint(s):
-    for c in s + '\n':
-        sys.stdout.write(c)
-        sys.stdout.flush()
-        time.sleep(2./10)
-def slowprint_character(s,character):
-    for c in s + '\n':
-        sys.stdout.write(f'{character}: {c}')
+    for lines in s + '\n':
+        sys.stdout.write(lines)
         sys.stdout.flush()
         time.sleep(2./10)
 def character_lines(character_name,s):
@@ -95,6 +77,9 @@ player = input("Player name: ")
 # Build characters
 sam = Samantha('Samantha',player,10000,[],{},False,S_palette)
 karczel = Karczel()
+omisha = Omisha
+zahur = Zahur
+cat1 =  Cat()
 
 # Build Closets
 sam_closet = [Clothing(i['type'],i['clothing'],i['color'][0],i['color'][1],i['color'][2]) for i in S_c]
@@ -282,6 +267,9 @@ while play != False:
         if choice == available_choices[]
         slowprint()
 
+    # The end
+    exec('end_graphic')
+
     # Replay?
     play_y_n = input('Do you still want to play?(Yes/No): ')
     while play_y_n.lower() != 'yes' or play_y_n.lower() != 'no':
@@ -292,6 +280,7 @@ while play != False:
             break
         else:
             print('Please input the right answer')
+
 
 print("You've finished playing, have a nice day~")
 
