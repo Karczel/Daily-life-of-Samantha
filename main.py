@@ -1,8 +1,8 @@
-import sys,time,csv
-import Clothing,Graphics,Classes
-import Samantha_Class,Zahur_Class,Omisha_Class,Karczel_Class,Clothing_Class,Cat_Class,Person_Class,Person_Class
+import sys,time
+import csv
+import Samantha_Class,Zahur_Class,Omisha_Class,Karczel_Class,Clothing_Class,Cat_Class
 
-Narrator_line_list = open(filename).read().splitlines()
+Narrator_line_list = open("Narrator_line.csv").read().splitlines()
 b = [x.split(';') for x in Narrator_line_list]
 c = b[0]
 Narrator_line = {key: [sub[idx] for sub in Narrator_line_list[1:]] for idx, key in enumerate(c)}
