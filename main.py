@@ -1,8 +1,5 @@
-import sys,time
-import csv
-import Samantha_Class,Zahur_Class,Omisha_Class,Karczel_Class,Clothing_Class,Cat_Class
-
-Narrator_line_list = open("Narrator_line.csv").read().splitlines()
+import sys,time,os
+Narrator_line_list = open("Story_Output/Narrator_line.csv").read().splitlines()
 b = [x.split(';') for x in Narrator_line_list]
 c = b[0]
 Narrator_line = {key: [sub[idx] for sub in Narrator_line_list[1:]] for idx, key in enumerate(c)}
@@ -12,11 +9,11 @@ def open_character_line_files(filename):
     line = {texts[0]:[output for output in texts[1,len(texts-1)]] for texts in line_split}
     return line
 
-Samantha_line = open_character_line_files("Samantha_line.csv")
-Karczel_line = open_character_line_files("Karczel_line.csv")
-Omisha_line = open_character_line_files("Omisha_line.csv")
-Zahur_line = open_character_line_files("Zahur_line.csv")
-Person1_line = open_character_line_files("Person1.csv")
+Samantha_line = open_character_line_files("Story_Output/Samantha_line.csv")
+Karczel_line = open_character_line_files("Story_Output/Karczel_line.csv")
+Omisha_line = open_character_line_files("Story_Output/Omisha_line.csv")
+Zahur_line = open_character_line_files("Story_Output/Zahur_line.csv")
+Person1_line = open_character_line_files("Story_Output/Person1.csv")
 
 def open_color_in_cloth(filename):
     color_lists = open(filename).read().splitlines()
@@ -31,10 +28,10 @@ def open_palette_files(filename):
         i.split(',')
     return {i[0]: [Color(i[1], i[2], i[3])] for i in palette_list}
 
-S_palette = open_palette_files("Samantha_palette.csv")
-K_palette = open_palette_files("Karczel_palette.csv")
-O_palette = open_palette_files("Omisha_palette.csv")
-Z_palette = open_palette_files("Zahur_palette.csv")
+S_palette = open_palette_files("Graphics/Palette/Samantha_palette.csv")
+K_palette = open_palette_files("Graphics/Palette/Karczel_palette.csv")
+O_palette = open_palette_files("Graphics/Palette/Omisha_palette.csv")
+Z_palette = open_palette_files("Graphics/Palette/Zahur_palette.csv")
 
 def open_clothing_files(filename):
     clothing_list = open(filename).read().splitlines()
@@ -47,8 +44,8 @@ def open_clothing_files(filename):
 # {1:i[1] 2:i[2] 3:[r,g,b]}
 # get => for i,j in dict find name index > return same index from other category
 
-S_c = open_clothing_files('Sam clothing.csv')
-K_c = open_clothing_files('Karczel clothing.csv')
+S_c = open_clothing_files('Clothing/Sam clothing.csv')
+K_c = open_clothing_files('Clothing/Karczel clothing.csv')
 
 def slowprint(s):
     for c in s + '\n':
