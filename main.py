@@ -47,7 +47,6 @@ def open_clothing_files(filename):
     clothing_split2 = [{key: clothing_split1[sub][index] for index, key in enumerate(clothing_split1[0])} for sub in range(1,len(clothing_split1))]
     for i in clothing_split2:
         i['color'] = i['color'].split(' ')
-        i['color'] = (Color(int(i['color'][0]), int(i['color'][1]), int(i['color'][2])))
     return clothing_split2
 
 S_c = open_clothing_files('Clothing/Sam clothing.csv')
@@ -77,9 +76,10 @@ player = input("Player name: ")
 # Build characters
 sam = Samantha('Samantha',player,10000,[],{},False,S_palette)
 karczel = Karczel()
-omisha = Omisha
-zahur = Zahur
+omisha = Omisha()
+zahur = Zahur()
 cat1 =  Cat()
+cat2 = Cat()
 
 # Build Closets
 sam_closet = [Clothing(i['type'],i['clothing'],i['color'][0],i['color'][1],i['color'][2]) for i in S_c]

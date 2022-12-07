@@ -1,9 +1,9 @@
-import Color_Class
+from Classes.Color_Class import Color
 class Clothing:
     def __init__(self,type,name,r,g,b):
         self.type = type
         self.name = name
-        self.color = Color(r,g,b)
+        self.color = Color(int(r), int(g), int(b))
 
     @property
     def get_name(self):
