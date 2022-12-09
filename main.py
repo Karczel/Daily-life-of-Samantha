@@ -31,6 +31,10 @@ Omisha_line = open_character_line_files("Story_Output/Omisha_line.csv")
 Zahur_line = open_character_line_files("Story_Output/Zahur_line.csv")
 Person1_line = open_character_line_files("Story_Output/Person1.csv")
 
+Acheievements_list = open('Story_Output/Achievements.csv').read().splitlines()
+d = [x.split(',') for x in Acheievements_list]
+Acheievements = {i[0]:i[1] for i in d}
+
 def open_palette_files(filename):
     palette_list = open(filename).read().splitlines()
     palette_split = [x.split(',') for x in palette_list]
@@ -269,6 +273,9 @@ while play != False:
 
     # The end
     exec('end_graphic')
+    # acheivements
+    if sam.exercise == True:
+        slowprint(Acheievements['Run 1 time'])
 
     # Replay?
     play_y_n = input('Do you still want to play?(Yes/No): ')
