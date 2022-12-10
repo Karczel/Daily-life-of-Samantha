@@ -69,7 +69,7 @@ def character_lines(character_name,s):
     return f
 
 Samantha_lines = character_lines('Samantha',Samantha_line)
-Karcze_lines = character_lines('Karczel',Karczel_line)
+Karczel_lines = character_lines('Karczel', Karczel_line)
 Omisha_lines = character_lines('Omisha',Omisha_line)
 Zahur_lines = character_lines('Zahur',Zahur_line)
 Person1_line = character_lines('Random person',Person1_line)
@@ -77,13 +77,19 @@ table = [ ]
 
 
 player = input("Player name: ")
+# Build attributes
+Karczel_items = []
+for i in S_c:
+    if 'Maid' in i['clothing']:
+        Karczel_items.append(i)
+
 # Build characters
 sam = Samantha('Samantha',player,10000,[],{},False,S_palette)
-karczel = Karczel()
-omisha = Omisha()
-zahur = Zahur()
-cat1 =  Cat()
-cat2 = Cat()
+karczel = Karczel('Karczel')
+omisha = Omisha('Omisha')
+zahur = Zahur('Zahur')
+cat1 =  Cat('')
+cat2 = Cat('')
 
 # Build Closets
 sam_closet = [Clothing(i['type'],i['clothing'],i['color'][0],i['color'][1],i['color'][2]) for i in S_c]
@@ -274,8 +280,68 @@ while play != False:
     # The end
     exec('end_graphic')
     # acheivements
+    count = 0
     if sam.exercise == True:
         slowprint(Acheievements['Run 1 time'])
+        count += 1
+        if sam.run == 2:
+            slowprint(Acheievements['Run 2 times'])
+    else:
+        slowprint(Acheievements["Didn't Run today"])
+
+    # about karczel
+    if karczel.location != '???':
+        if '___Festival' in karczel.visited_locations:
+            count += 1
+            slowprint(Acheievements['Go to the Festival'])
+            if karczel.see == 1:
+                slowprint(Acheievements['See the 1st Tournament'])
+            elif karczel.see == 2:
+                slowprint(Acheievements['See the 2nd Tournament'])
+            elif karczel.see == 3:
+                slowprint(Acheievements['See the 3rd Tournament'])
+        if karczel.dinner != False:
+            if "Fancy restaurant" in karczel.visited_locations:
+                slowprint(Acheievements["Eat dinner at the fancy place"])
+            else:
+                if "Omelette and rice" in sam.items:
+                    slowprint(Acheievements["Eat dinner at Karczel's place"])
+                elif "Sam's food" in sam.items:
+                    slowprint(Acheievements["Make dinner for Karczel"])
+        else:
+            slowprint(Acheievements["Eat dinner at home"])
+    else:
+        slowprint(Acheievements["Didn't see Karczel"])
+
+    # about zahur
+    if zahur.location != '???':
+        count += 1
+        if 'buttered toast' in sam.items:
+            slowprint(Acheievements['Sam still carry toast'])
+        elif 'buttered toast' in table:
+            slowprint(Acheievements['Forgotten the Toast at the table'])
+        elif zahur.hungry == False:
+            slowprint(Acheievements['Gave Zahur toast'])
+    else:
+        slowprint(Acheievements["Didn't see Zahur"])
+
+    # about omisha
+    if omisha.location != '???':
+        count += 1
+        slowprint(Acheievements['See Omisha'])
+        if 'art supplies' in omisha.items:
+            slowprint(Acheievements['Buy Omisha Art supplies'])
+        elif cat1.location != '???':
+            slowprint(Acheievements['Rescue kittens'])
+            if cat1 and cat2 in sam.items:
+                slowprint(Acheievements['Adopt kittens'])
+    else:
+        slowprint(Acheievements["Didn't see Omisha"])
+    # lazy day?
+    if count == 0:
+        slowprint(Acheievements['Did nothing today'])
+
+    slowprint("That everything that happened today")
 
     # Replay?
     play_y_n = input('Do you still want to play?(Yes/No): ')

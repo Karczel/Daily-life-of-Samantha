@@ -1,10 +1,12 @@
 class Karczel:
-    def __init__(self, items=[], clothing={}, dinner=False, location='???', palette=[]):
+    def __init__(self, items=[],see=1, clothing={}, dinner=False, location='???',visited_locations=[], palette=[]):
         self.items = items
+        self.see = see
         self.clothing = clothing
         self.dinner = dinner
         self.location = location
         self.palette = palette
+        self.visited_locations = visited_locations
 
     def remove_clothing(self, clothing_type):
         self.clothing.pop(clothing_type)
@@ -56,16 +58,31 @@ class Karczel:
         return self.items
 
     @property
+    def get_see(self):
+        return self.see
+    @get_see.setter
+    def set_see(self, see):
+        self.see = see
+
+    @property
     def get_clothing(self):
         return self.clothing
 
     @property
     def get_dinner(self):
         return self.dinner
+    @get_dinner.setter
+    def set_dinner(self, reply):
+        self.dinner = reply
 
     @property
     def get_location(self):
         return self.location
+
+    @get_location.setter
+    def set_location(self, location):
+        self.visited_locations.append(self.location)
+        self.location = location
 
     @property
     def get_palette(self):

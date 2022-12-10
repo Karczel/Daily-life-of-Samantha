@@ -1,5 +1,5 @@
-type,clothing
-Dress,Flourescent Dress
+type,clothing, color
+Dress,Flourescent Dress,0 0 0
 Socks,
 Torso,
 Shoes,
