@@ -26,7 +26,15 @@ Which player are you? : player1
 You have .... (get player1 achievement list)
 
 ## Authors
+### Artist, Coder, Author
 Nantawan Paramapooti, studying @Kasetart University in Software Engineering
-[IG: karczel_showcase](https://www.instagram.com/karczel_showcase/)
+<br />[IG: karczel_showcase](https://www.instagram.com/karczel_showcase/)
+<br />[FB: Karczel](https://www.facebook.com/KarczelShowcase)
+<br />[YT: Karczel's Shenanigans](https://www.youtube.com/channel/UCV34aIA-W9ltBzEhAfy5euA)
+<br />[Artstation: Nantawan paramapooti](https://www.artstation.com/karczel_showcase)
+<br />
+<br />
+### Project overseer
+<br />Aj. Supaporn
 
 *Karczel in this story and in future works is not me directly, but is one of the fictional characters based on me interacting with other characters<br />

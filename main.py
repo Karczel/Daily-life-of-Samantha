@@ -337,6 +337,7 @@ while play != False:
                 slowprint(Acheievements['Adopt kittens'])
     else:
         slowprint(Acheievements["Didn't see Omisha"])
+
     # lazy day?
     if count == 0:
         slowprint(Acheievements['Did nothing today'])
