@@ -27,6 +27,6 @@ You have .... (get player1 achievement list)
 
 ## Authors
 Nantawan Paramapooti, studying @Kasetart University in Software Engineering
-[@]
+[IG: karczel_showcase](https://www.instagram.com/karczel_showcase/)
 
 *Karczel in this story and in future works is not me directly, but is one of the fictional characters based on me interacting with other characters<br />
