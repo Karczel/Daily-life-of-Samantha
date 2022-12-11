@@ -703,5 +703,5 @@ turtle.forward(80)
 
 # ---end---
 
-window:object = turtle. Screen()
-window. exitonclick()
+# window:object = turtle. Screen()
+# window. exitonclick()

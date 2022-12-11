@@ -1,7 +1,7 @@
-type,clothing, color
+type,clothing,color
 Dress,Flourescent Dress,0 0 0
-Socks,
-Torso,
-Shoes,
-Lower half,
-Jacket,
+Socks, ,1 2 3
+Torso, ,1 2 3
+Shoes, ,1 2 3
+Lower half, ,1 2 3
+Jacket, ,1 2 3
