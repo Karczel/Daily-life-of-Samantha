@@ -10,15 +10,16 @@ from Classes.Cat_Class import Cat
 # Graphics
 from Graphics import end_graphic
 
-# # Pictures
-# # The end
-# exec('end_graphic')
-
 
 Narrator_line_list = open("Story_Output/Narrator_line.csv").read().splitlines()
 b = [x.split(';') for x in Narrator_line_list]
 c = b[0]
 Narrator_line = [{key: b[sub][idx] for idx, key in enumerate(c)}for sub in range(1,len(b))]
+
+Question_line_list = open("Story_Output/Questions.csv").read().splitlines()
+d = [x.split(';') for x in Question_line_list]
+e = d[0]
+Question_line = [{key: d[sub][idx] for idx, key in enumerate(e)}for sub in range(1,len(d))]
 def open_character_line_files(filename):
     line_lists = open(filename).read().splitlines()
     line_split = [x.split(';') for x in line_lists]
@@ -72,9 +73,15 @@ Samantha_lines = character_lines('Samantha',Samantha_line)
 Karczel_lines = character_lines('Karczel', Karczel_line)
 Omisha_lines = character_lines('Omisha',Omisha_line)
 Zahur_lines = character_lines('Zahur',Zahur_line)
-Person1_line = character_lines('Random person',Person1_line)
 table = [ ]
 
+# check variables
+print(Samantha_lines)
+print(Karczel_lines)
+print(Omisha_lines)
+print(Narrator_line)
+print(Question_line)
+sys.exit()
 
 player = input("Player name: ")
 # Build attributes

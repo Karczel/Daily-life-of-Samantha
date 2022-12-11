@@ -1,9 +1,8 @@
 class Cat:
-    def __init__(self, name='???', general_desc='', color_text='', items=[], pronoun='???', kittens={}, location='???', palette={}):
+    def __init__(self, name='???', general_desc='', color_text='', pronoun='???', kittens={}, location='???', palette={}):
         self.name = name
         self.desc = general_desc
         self.color = color_text
-        self.items = items
         self.pronoun = pronoun
         self.kittens = kittens
         self.location = location
