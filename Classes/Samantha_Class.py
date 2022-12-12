@@ -2,7 +2,6 @@ class Samantha:
     def __init__(self,name='Samantha',player_name='',items=[], clothing={},exercise=False,run=0,palette={}):
         self.name = name
         self.player = player_name
-        self.hp = hp
         self.items = items
         self.clothing = clothing
         self.exercise = exercise
@@ -66,10 +65,6 @@ class Samantha:
     @property
     def get_playername(self):
         return self.palette
-
-    @property
-    def get_hp(self):
-        return self.hp
 
     @property
     def get_items(self):

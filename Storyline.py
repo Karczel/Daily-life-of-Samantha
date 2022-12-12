@@ -71,7 +71,7 @@ Samantha_lines = character_lines('Samantha', Samantha_line)
 Karczel_lines = character_lines('Karczel', Karczel_line)
 Omisha_lines = character_lines('Omisha', Omisha_line)
 Zahur_lines = character_lines('Zahur', Zahur_line)
-table = [ ]
+table = []
 
 # check variables
 # print(Samantha_lines)
