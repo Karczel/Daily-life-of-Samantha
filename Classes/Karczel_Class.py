@@ -1,5 +1,5 @@
 class Karczel:
-    def __init__(self, items=[],see=1, clothing={}, dinner=False, location='???',visited_locations=[], palette=[]):
+    def __init__(self, items=[],see=1, clothing={}, dinner=False, location='???',visited_locations=[], palette={}):
         self.items = items
         self.see = see
         self.clothing = clothing

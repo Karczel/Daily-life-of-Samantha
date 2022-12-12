@@ -14,5 +14,8 @@ class Zahur:
     def get_hungry(self):
         return self.hungry
     @property
-    def palette(self):
+    def get_palette(self):
         return self.palette
+
+    def __repr__(self):
+        return f""

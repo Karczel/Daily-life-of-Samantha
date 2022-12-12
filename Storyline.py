@@ -1,5 +1,6 @@
 import copy
-import sys,time
+import sys
+import time
 # Classes
 from Classes.Color_Class import Color
 from Classes.Omisha_Class import Omisha
@@ -11,15 +12,20 @@ from Classes.Clothing_Class import Clothing
 Narrator_line_list = open("Story_Output/Narrator_line.csv", encoding="utf8").read().splitlines()
 b = [x.split(';') for x in Narrator_line_list]
 c = b[0]
-Narrator_line = [{key: b[sub][idx] for idx, key in enumerate(c)}for sub in range(1,len(b))]
+Narrator_line = [{key: b[sub][idx] for idx, key in enumerate(c)}for sub in range(1, len(b))]
 Question_line_list = open("Story_Output/Questions.csv", encoding="utf8").read().splitlines()
 d = [x.split(';') for x in Question_line_list]
 e = d[0]
-Question_line = [{key: d[sub][idx] for idx, key in enumerate(e)}for sub in range(1,len(d))]
+Question_line = [{key: d[sub][idx] for idx, key in enumerate(e)}for sub in range(1, len(d))]
+Narrator_extra_line_list = open("Story_Output/Narrator_line_extra adjustments.csv", encoding="utf8").read().splitlines()
+f = [x.split(';') for x in Narrator_extra_line_list]
+g = f[0]
+Narrator_extra_line = [{key: f[sub][idx] for idx, key in enumerate(g)}for sub in range(1, len(f))]
+
 def open_character_line_files(filename):
     line_lists = open(filename, encoding="utf8").read().splitlines()
     line_split = [x.split(';') for x in line_lists]
-    line = [{key: line_split[sub][idx-1] for idx, key in enumerate(line_split[0])} for sub in range(1, len(line_split))]
+    line = [{key: line_split[sub][idx] for idx, key in enumerate(line_split[0])} for sub in range(1, len(line_split))]
     return line
 
 Samantha_line = open_character_line_files("Story_Output/Samantha_line.csv")
@@ -53,16 +59,13 @@ S_c = open_clothing_files('Clothing/Sam clothing.csv')
 K_c = open_clothing_files('Clothing/Karczel clothing.csv')
 
 def slowprint(s):
-    for lines in s + '\n':
-        sys.stdout.write(lines)
-        sys.stdout.flush()
-        time.sleep(2./10)
+    temp_list = s.split('\\n')
+    for i in temp_list:
+        for lines in i + '\n':
+            sys.stdout.write(lines)
+            sys.stdout.flush()
+            time.sleep(1. / 20)
 
-# check variables
-# print(Samantha_line)
-# print(Karczel_line)
-# print(Zahur_line)
-# print(Omisha_line)
 def character_lines(character_name,s):
     f = copy.deepcopy(s)
     for i in f:
@@ -78,40 +81,27 @@ Omisha_lines = character_lines('Omisha', Omisha_line)
 Zahur_lines = character_lines('Zahur', Zahur_line)
 table = []
 
-# check variables
-# print(S_c)
-# print(S_palette)
-# print(Samantha_lines)
-# print(K_c)
-# print(K_palette)
-# print(Karczel_lines)
-# print(O_palette)
-# print(Omisha_lines)
-# print(Z_palette)
-# print(Zahur_lines)
-# print(Narrator_line)
-# print(Question_line)
-
-# test functionality
-# print(Samantha_line[0]['Line'])
-
 
 player = input("Player name: ")
-# Build attributes
-Karczel_items = []
-for i in S_c:
-    if 'Maid' in i['clothing']:
-        Karczel_items.append(i)
 
 # Build characters
 sam = Samantha('Samantha', player, [], {}, False, 0, S_palette)
-karczel = Karczel('Karczel')
-omisha = Omisha('Omisha')
-zahur = Zahur('???',True,Z_palette)
+karczel = Karczel([],1,{},False,'???',[],K_palette)
+omisha = Omisha([],'???',O_palette)
+zahur = Zahur('???', True, Z_palette)
 
 # Build Closets
 sam_closet = [Clothing(i['type'],i['clothing'],i['color'][0],i['color'][1],i['color'][2]) for i in S_c]
 karczel_closet = [Clothing(i['type'],i['clothing'],i['color'][0],i['color'][1],i['color'][2]) for i in K_c]
+
+for i in sam_closet:
+    print(i)
+
+# Build attributes
+Karczel_items = []
+for i in sam_closet:
+    if 'Maid' in i.name:
+        Karczel_items.append(i)
 
 # --- Start ---
 play = True
@@ -273,7 +263,21 @@ while play != False:
                         if choose == choice_list[i] or choose == str(i + 1):
                             break
                     print('Wrong answer')
-                if choose.lower() == "The kitchen" or choose == '2':
+                if choose.lower() == "Karczel's House" or choose == '3':
+                    # k house
+                    for i in Narrator_line:
+                        if i['Note'] == 'What you want to do':
+                            if i['Answer'] == "Karczel's House":
+                                slowprint(i['Output'])
+
+                if choose.lower() == "Karczel's House" or choose == '3':
+                    # k house
+                    for i in Narrator_line:
+                        if i['Note'] == 'What you want to do':
+                            if i['Answer'] == "Karczel's House":
+                                slowprint(i['Output'])
+
+                if choose.lower() == "the kitchen" or choose == '2':
                     # The kitchen
                     for i in Narrator_line:
                         if i['Note'] == 'What you want to do':
@@ -297,11 +301,11 @@ while play != False:
                             if choose == choice_list[i] or choose == str(i + 1):
                                 break
                         print('Wrong answer')
-                    if choose.lower() == "Karczel's House" or choose == '2':
-                        # The kitchen
+                    if choose.lower() == "karczel's house" or choose == '2':
+                        # k house
                         for i in Narrator_line:
                             if i['Note'] == 'What you want to do':
-                                if i['Answer'] == "The kitchen":
+                                if i['Answer'] == "Karczel's House":
                                     slowprint(i['Output'])
                         while choice:
                             # what do
@@ -322,12 +326,47 @@ while play != False:
                                 if choose == choice_list[i] or choose == str(i + 1):
                                     break
                             print('Wrong answer')
-                    if choose.lower() == "Omisha's room" or choose == '2':
-                        # The kitchen
+                        if choose.lower() == "omisha's room" or choose == '1':
+                            # see omisha
+                            for i in Narrator_line:
+                                if i['Note'] == 'What you want to do':
+                                    if i['Answer'] == "Omisha's room":
+                                        slowprint(i['Output'])
+                        slowprint("There's nothing else to do today.")
+
+                    elif choose.lower() == "omisha's room" or choose == '1':
+                        # see omisha
                         for i in Narrator_line:
                             if i['Note'] == 'What you want to do':
-                                if i['Answer'] == "The kitchen":
+                                if i['Answer'] == "Omisha's room":
                                     slowprint(i['Output'])
+                        while choice:
+                            # what do
+                            choice_list = []
+                            for i in Question_line:
+                                if i['Note'] == 'What you want to do':
+                                    slowprint(i['Question'])
+                            for i in Narrator_line:
+                                if i['Note'] == 'What you want to do':
+                                    choice_list.append(i['Answer'])
+                            choice_list.pop("Zahur’s room")
+                            choice_list.pop("The kitchen")
+                            choice_list.pop("Omisha's room")
+                            for i in range(len(choice_list)):
+                                print(f"{i}: {choice_list[i]}")
+                            choose = input("Enter your choice: ")
+                            for i in range(len(choice_list)):
+                                if choose == choice_list[i] or choose == str(i + 1):
+                                    break
+                            print('Wrong answer')
+                        if choose.lower() == "karczel's house" or choose == '1':
+                            # k house
+                            for i in Narrator_line:
+                                if i['Note'] == 'What you want to do':
+                                    if i['Answer'] == "Karczel's House":
+                                        slowprint(i['Output'])
+                        slowprint("There's nothing else to do today.")
+
 
             elif choose.lower() == "omisha’s room" or choose == '3':
                 # omisha's room
@@ -652,7 +691,6 @@ while play != False:
                                         if i['Answer'] == "Omisha's room":
                                             slowprint(i['Output'])
                             slowprint("There's nothing else to do today.")
-
                     # do nothing(void)
                 if choose.lower() == 'yes' or choose == '1':
                     # Yes
@@ -677,30 +715,76 @@ while play != False:
                                 break
                     if choose.lower() == "karczel's clothes" or choose == '1':
                         # k
-                        for i in S_c:
-                            if i['clothing'] == "Over sized Karczel's Jacket":
-                                sam.change_clothing(i['type'], i['clothing'])
+                        for i in sam_closet:
+                            if i.name == "Over sized Karczel's Jacket":
+                                sam.change_clothing(i.type, i.name)
                         for i in Narrator_line:
                             if i['Note'] == 'Choose clothing':
                                 if i['Answer'] == "Karczel's Clothes":
                                     slowprint(i['Output'])
-
-                    if choose.lower() == "karczel's handmade cloth" or choose == '2':
+                    elif choose.lower() == "karczel's handmade cloth" or choose == '2':
                         # k
                         for i in karczel.items:
-                            sam.change_clothing(i['type'], i['clothing'])
+                            sam.change_clothing(i.type, i.name)
                         for i in Narrator_line:
                             if i['Note'] == 'Choose clothing':
                                 if i['Answer'] == "Karczel's Handmade Cloth":
                                     slowprint(i['Output'])
+                    elif choose.lower() == "run back to get your own clothes" or choose == '2':
+                        # k
+                        for i in sam_closet:
+                            if 'suit' in i.name:
+                                sam.change_clothing(i.type, i.name)
+                        for i in Narrator_line:
+                            if i['Note'] == 'Choose clothing':
+                                if i['Answer'] == "Run back to get your own clothes":
+                                    slowprint(i['Output'])
+                    while choice:
+                        # festival
+                        choice_list = []
+                        for i in Question_line:
+                            if i['Note'] == 'Festival':
+                                slowprint(i['Question'])
+                        for i in Narrator_line:
+                            if i['Note'] == 'Festival':
+                                choice_list.append(i['Answer'])
+                        for i in range(len(choice_list)):
+                            print(f"{i}: {choice_list[i]}")
+                        choose = input("Enter your choice: ")
+                        for i in range(len(choice_list)):
+                            if choose == choice_list[i] or choose == str(i + 1):
+                                break
+                        print('Wrong answer')
+                    if choose == 'The "Athleticmaton"' or choice == '1':
+                        # robo stall
+                        for i in Narrator_line:
+                            if i['Note'] == 'Festival':
+                                if i['Answer'] == 'The "Athleticmaton"':
+                                    slowprint(i['Output'])
+                    elif choose == 'Virtual gun game' or choose == '2':
+                        # gun stall
+                        for i in Narrator_line:
+                            if i['Note'] == 'Festival':
+                                if i['Answer'] == 'Virtual gun game':
+                                    slowprint(i['Output'])
+                    elif choose == 'Watch the tournament competition' or choose == '3':
+                        # festival 3
+                        for i in Narrator_line:
+                            if i['Note'] == 'Festival':
+                                if i['Answer'] == 'Watch the tournament competition':
+                                    slowprint(i['Output'])
+                    for i in Narrator_extra_line:
+                        if i['Note'] == 'Festival over late':
+                            slowprint(i['Output'])
+                    if 'suit' not in sam.clothing.values():
                         while choice:
-                            # festival
-                            choice_list = []
+                            # k dinner
+                            # choice_list = []
                             for i in Question_line:
-                                if i['Note'] == 'Festival':
+                                if i['Note'] == 'Karczel Dinner':
                                     slowprint(i['Question'])
                             for i in Narrator_line:
-                                if i['Note'] == 'Festival':
+                                if i['Note'] == 'Karczel Dinner':
                                     choice_list.append(i['Answer'])
                             for i in range(len(choice_list)):
                                 print(f"{i}: {choice_list[i]}")
@@ -709,114 +793,73 @@ while play != False:
                                 if choose == choice_list[i] or choose == str(i + 1):
                                     break
                             print('Wrong answer')
-                        if choose == 'The "Athleticmaton"' or choice == '1':
-                            # robo stall
+                        if choose.lower() == 'yes' or choose == '1':
+                            # k yes
                             for i in Narrator_line:
-                                if i['Note'] == 'Festival':
-                                    if i['Answer'] == 'The "Athleticmaton"':
+                                if i['Note'] == 'Karczel Dinner':
+                                    if i['Answer'] == 'Yes':
                                         slowprint(i['Output'])
-                        elif choose == 'Virtual gun game' or choose == '2':
-                            # gun stall
+                        elif choose.lower() == 'no' or choose == '2':
+                            # k yes
                             for i in Narrator_line:
-                                if i['Note'] == 'Festival':
-                                    if i['Answer'] == 'Virtual gun game':
+                                if i['Note'] == 'Karczel Dinner':
+                                    if i['Answer'] == 'No':
                                         slowprint(i['Output'])
-                        elif choose == 'Watch the tournament competition' or choose == '3':
-                            # festival 3
+                        elif choose.lower() == 'make the dinner' or choose == '3':
+                            # k yes
                             for i in Narrator_line:
-                                if i['Note'] == 'Festival':
-                                    if i['Answer'] == 'Watch the tournament competition':
+                                if i['Note'] == 'Karczel Dinner':
+                                    if i['Answer'] == 'Make the dinner':
                                         slowprint(i['Output'])
-                        for i in Narrator_line_extra:
-                            if i['Note'] == 'Festival over late':
-                                slowprint(i['Output'])
-                        if 'suit' not in sam.clothing.values():
-                            while choice:
-                                # k dinner
-                                choice_list = []
-                                for i in Question_line:
-                                    if i['Note'] == 'Karczel Dinner':
-                                        slowprint(i['Question'])
-                                for i in Narrator_line:
-                                    if i['Note'] == 'Karczel Dinner':
-                                        choice_list.append(i['Answer'])
-                                for i in range(len(choice_list)):
-                                    print(f"{i}: {choice_list[i]}")
-                                choose = input("Enter your choice: ")
-                                for i in range(len(choice_list)):
-                                    if choose == choice_list[i] or choose == str(i + 1):
-                                        break
-                                print('Wrong answer')
-
-                            if choose.lower() == 'yes' or choose == '1':
-                                # k yes
-                                for i in Narrator_line:
-                                    if i['Note'] == 'Karczel Dinner':
-                                        if i['Answer'] == 'Yes':
-                                            slowprint(i['Output'])
-                            elif choose.lower() == 'no' or choose == '2':
-                                # k yes
-                                for i in Narrator_line:
-                                    if i['Note'] == 'Karczel Dinner':
-                                        if i['Answer'] == 'No':
-                                            slowprint(i['Output'])
-                            elif choose.lower() == 'make the dinner' or choose == '3':
-                                # k yes
-                                for i in Narrator_line:
-                                    if i['Note'] == 'Karczel Dinner':
-                                        if i['Answer'] == 'Make the dinner':
-                                            slowprint(i['Output'])
-                        else:
-                            while choice:
-                                # fancy restaurant
-                                choice_list = []
-                                for i in Question_line:
-                                    if i['Note'] == 'Food':
-                                        slowprint(i['Question'])
-                                for i in Narrator_line:
-                                    if i['Note'] == 'Food':
-                                        choice_list.append(i['Answer'])
-                                for i in range(len(choice_list)):
-                                    print(f"{i}: {choice_list[i]}")
-                                choose = input("Enter your choice: ")
-                                for i in range(len(choice_list)):
-                                    if choose == choice_list[i] or choose == str(i + 1):
-                                        break
-                                print('Wrong answer')
+                    else:
+                        while choice:
+                            # fancy restaurant
+                            choice_list = []
+                            for i in Question_line:
+                                if i['Note'] == 'Food':
+                                    slowprint(i['Question'])
                             for i in Narrator_line:
-                                if i['Note'] =='Food':
-                                    if i['Answer'] == 'Food1':
+                                if i['Note'] == 'Food':
+                                    choice_list.append(i['Answer'])
+                            for i in range(len(choice_list)):
+                                print(f"{i}: {choice_list[i]}")
+                            choose = input("Enter your choice: ")
+                            for i in range(len(choice_list)):
+                                if choose == choice_list[i] or choose == str(i + 1):
+                                    break
+                            print('Wrong answer')
+                        for i in Narrator_line:
+                            if i['Note'] == 'Food':
+                                if i['Answer'] == 'Food1':
+                                    slowprint(i['Output'])
+                        while choice:
+                            # dance
+                            choice_list = []
+                            for i in Question_line:
+                                if i['Note'] == 'Dance':
+                                    slowprint(i['Question'])
+                            for i in Narrator_line:
+                                if i['Note'] == 'Dance':
+                                    choice_list.append(i['Answer'])
+                            for i in range(len(choice_list)):
+                                print(f"{i}: {choice_list[i]}")
+                            choose = input("Enter your choice: ")
+                            for i in range(len(choice_list)):
+                                if choose == choice_list[i] or choose == str(i + 1):
+                                    break
+                            print('Wrong answer')
+                        if choose.lower() == '"no"' or choose == '2':
+                            # no
+                            for i in Narrator_line:
+                                if i['Note'] == 'Dance':
+                                    if i['Answer'] == '"No"':
                                         slowprint(i['Output'])
-                            while choice:
-                                # dance
-                                choice_list = []
-                                for i in Question_line:
-                                    if i['Note'] == 'Dance':
-                                        slowprint(i['Question'])
-                                for i in Narrator_line:
-                                    if i['Note'] == 'Dance':
-                                        choice_list.append(i['Answer'])
-                                for i in range(len(choice_list)):
-                                    print(f"{i}: {choice_list[i]}")
-                                choose = input("Enter your choice: ")
-                                for i in range(len(choice_list)):
-                                    if choose == choice_list[i] or choose == str(i + 1):
-                                        break
-                                print('Wrong answer')
-                            if choose.lower() == '"no"' or choose == '2':
-                                # no
-                                for i in Narrator_line:
-                                    if i['Note'] == 'Dance':
-                                        if i['Answer'] == '"No"':
-                                            slowprint(i['Output'])
-
-                            if choose.lower() == '"yes"' or choose == '1':
-                                # no
-                                for i in Narrator_line:
-                                    if i['Note'] == 'Dance':
-                                        if i['Answer'] == '"Yes"':
-                                            slowprint(i['Output'])
-
+                        if choose.lower() == '"yes"' or choose == '1':
+                            # no
+                            for i in Narrator_line:
+                                if i['Note'] == 'Dance':
+                                    if i['Answer'] == '"Yes"':
+                                        slowprint(i['Output'])
     # The end
     exec('end_graphic')
     # acheivements
@@ -871,9 +914,9 @@ while play != False:
         slowprint(Acheievements['See Omisha'])
         if 'art supplies' in omisha.items:
             slowprint(Acheievements['Buy Omisha Art supplies'])
-        elif cat1.location != '???':
+        else:
             slowprint(Acheievements['Rescue kittens'])
-            if cat1 and cat2 in sam.items:
+            if 'cat' in sam.items:
                 slowprint(Acheievements['Adopt kittens'])
     else:
         slowprint(Acheievements["Didn't see Omisha"])
@@ -898,4 +941,16 @@ while play != False:
 
 print("You've finished playing, have a nice day~")
 
-# --- End ---
+# --- The End ---
+print('--- The End ---')
+print('')
+print('--- Nerd details ---')
+print('')
+print("Sam's closet")
+for i in sam_closet:
+    print(i)
+print('')
+
+print("Karczel's closet")
+for i in karczel_closet:
+    print(i)

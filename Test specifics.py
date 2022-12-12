@@ -53,15 +53,13 @@ S_c = open_clothing_files('Clothing/Sam clothing.csv')
 K_c = open_clothing_files('Clothing/Karczel clothing.csv')
 
 def slowprint(s):
-    for lines in s + '\n':
-        sys.stdout.write(lines)
-        sys.stdout.flush()
-        time.sleep(2./10)
+    temp_list = s.split('\\n')
+    for i in temp_list:
+        for lines in i + '\n':
+            sys.stdout.write(lines)
+            sys.stdout.flush()
+            time.sleep(1. / 20)
 
-print(Samantha_line)
-print(Karczel_line)
-print(Zahur_line)
-print(Omisha_line)
 def character_lines(character_name,s):
     f = copy.deepcopy(s)
     for i in f:
@@ -93,9 +91,41 @@ print(Question_line)
 
 # test functionality
 print(Samantha_line[0]['Line'])
+# slowprint(Question_line[0]['Question'])
 
-print(Question_line[0]['Question'])
-temp_question_list = Question_line[0]['Question'].split('\\n')
-print((temp_question_list))
-for i in temp_question_list:
-    slowprint(i)
+
+player = input("Player name: ")
+
+# Build characters
+sam = Samantha('Samantha', player, [], {}, False, 0, S_palette)
+karczel = Karczel([],1,{},False,'???',[],K_palette)
+omisha = Omisha([],'???',O_palette)
+zahur = Zahur('???', True, Z_palette)
+
+# Build Closets
+sam_closet = [Clothing(i['type'],i['clothing'],i['color'][0],i['color'][1],i['color'][2]) for i in S_c]
+karczel_closet = [Clothing(i['type'],i['clothing'],i['color'][0],i['color'][1],i['color'][2]) for i in K_c]
+
+for i in sam_closet:
+    print(i)
+
+# Build attributes
+Karczel_items = []
+for i in sam_closet:
+    if 'Maid' in i.name:
+        Karczel_items.append(i)
+
+print(Karczel_items)
+
+print('--- The End ---')
+print('')
+print('--- Nerd details ---')
+print('')
+print("Sam's closet")
+for i in sam_closet:
+    print(i)
+print('')
+
+print("Karczel's closet")
+for i in karczel_closet:
+    print(i)

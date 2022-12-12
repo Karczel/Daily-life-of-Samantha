@@ -6,8 +6,14 @@ class Clothing:
         self.color = Color(int(r), int(g), int(b))
 
     @property
+    def get_type(self):
+        return self.type
+    @property
     def get_name(self):
         return self.name
     @property
     def get_color(self):
         return self.color
+
+    def __repr__(self):
+        return f'The {self.name} is a {self.type} piece, with this color: {self.color}'
