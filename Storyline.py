@@ -1,3 +1,4 @@
+import copy
 import sys,time
 # Classes
 from Classes.Color_Class import Color
@@ -15,10 +16,6 @@ Question_line_list = open("Story_Output/Questions.csv", encoding="utf8").read().
 d = [x.split(';') for x in Question_line_list]
 e = d[0]
 Question_line = [{key: d[sub][idx] for idx, key in enumerate(e)}for sub in range(1,len(d))]
-Narrator_line_extra = open("Story_Output/Narrator_line_extra adjustments.csv", encoding="utf8").read().splitlines()
-f = [x.split(';') for x in Narrator_line_extra]
-Narrator_line_extra = [{key: b[sub][idx] for idx, key in enumerate(f[0])}for sub in range(1,len(f))]
-
 def open_character_line_files(filename):
     line_lists = open(filename, encoding="utf8").read().splitlines()
     line_split = [x.split(';') for x in line_lists]
@@ -60,11 +57,19 @@ def slowprint(s):
         sys.stdout.write(lines)
         sys.stdout.flush()
         time.sleep(2./10)
+
+# check variables
+# print(Samantha_line)
+# print(Karczel_line)
+# print(Zahur_line)
+# print(Omisha_line)
 def character_lines(character_name,s):
-    f = []
-    for i in s:
-        a = character_name + ': ' + i['Line']
-        f.append(a)
+    f = copy.deepcopy(s)
+    for i in f:
+        for k, v in i.items():
+            if k == 'Line':
+                a = character_name + ': ' + v
+                i.update({k: a})
     return f
 
 Samantha_lines = character_lines('Samantha', Samantha_line)
@@ -74,13 +79,22 @@ Zahur_lines = character_lines('Zahur', Zahur_line)
 table = []
 
 # check variables
+# print(S_c)
+# print(S_palette)
 # print(Samantha_lines)
+# print(K_c)
+# print(K_palette)
 # print(Karczel_lines)
+# print(O_palette)
 # print(Omisha_lines)
+# print(Z_palette)
 # print(Zahur_lines)
 # print(Narrator_line)
 # print(Question_line)
-# print(Narrator_line_extra)
+
+# test functionality
+# print(Samantha_line[0]['Line'])
+
 
 player = input("Player name: ")
 # Build attributes

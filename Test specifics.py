@@ -1,3 +1,4 @@
+import copy
 import sys,time
 # Classes
 from Classes.Color_Class import Color
@@ -18,7 +19,7 @@ Question_line = [{key: d[sub][idx] for idx, key in enumerate(e)}for sub in range
 def open_character_line_files(filename):
     line_lists = open(filename, encoding="utf8").read().splitlines()
     line_split = [x.split(';') for x in line_lists]
-    line = [{key: line_split[sub][idx-1] for idx, key in enumerate(line_split[0])} for sub in range(1, len(line_split))]
+    line = [{key: line_split[sub][idx] for idx, key in enumerate(line_split[0])} for sub in range(1, len(line_split))]
     return line
 
 Samantha_line = open_character_line_files("Story_Output/Samantha_line.csv")
@@ -56,24 +57,45 @@ def slowprint(s):
         sys.stdout.write(lines)
         sys.stdout.flush()
         time.sleep(2./10)
+
+print(Samantha_line)
+print(Karczel_line)
+print(Zahur_line)
+print(Omisha_line)
 def character_lines(character_name,s):
-    f = []
-    for i in s:
-        a = character_name + ': ' + i['Line']
-        f.append(a)
+    f = copy.deepcopy(s)
+    for i in f:
+        for k, v in i.items():
+            if k == 'Line':
+                a = character_name + ': ' + v
+                i.update({k: a})
     return f
 
 Samantha_lines = character_lines('Samantha', Samantha_line)
 Karczel_lines = character_lines('Karczel', Karczel_line)
 Omisha_lines = character_lines('Omisha', Omisha_line)
 Zahur_lines = character_lines('Zahur', Zahur_line)
-table = [ ]
+table = []
 
 # check variables
+print(S_c)
+print(S_palette)
 print(Samantha_lines)
+print(K_c)
+print(K_palette)
 print(Karczel_lines)
+print(O_palette)
 print(Omisha_lines)
+print(Z_palette)
 print(Zahur_lines)
 print(Narrator_line)
 print(Question_line)
 
+# test functionality
+print(Samantha_line[0]['Line'])
+
+print(Question_line[0]['Question'])
+temp_question_list = Question_line[0]['Question'].split('\\n')
+print((temp_question_list))
+for i in temp_question_list:
+    slowprint(i)
