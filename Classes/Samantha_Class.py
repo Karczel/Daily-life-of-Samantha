@@ -1,5 +1,5 @@
 class Samantha:
-    def __init__(self,name='Samantha',player_name='',hp=0,items=[], clothing={},exercise=False,run=0,palette={}):
+    def __init__(self,name='Samantha',player_name='',items=[], clothing={},exercise=False,run=0,palette={}):
         self.name = name
         self.player = player_name
         self.hp = hp

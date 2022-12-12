@@ -6,7 +6,6 @@ from Classes.Zahur_Class import Zahur
 from Classes.Karczel_Class import Karczel
 from Classes.Samantha_Class import Samantha
 from Classes.Clothing_Class import Clothing
-from Classes.Cat_Class import Cat
 
 Narrator_line_list = open("Story_Output/Narrator_line.csv", encoding="utf8").read().splitlines()
 b = [x.split(';') for x in Narrator_line_list]

@@ -1,6 +1,5 @@
 class Zahur:
-    def __init__(self,items=[],location='???',hungry=True,palette={}):
-        self.items = items
+    def __init__(self,location='???',hungry=True,palette={}):
         self.location = location
         self.hungry = hungry
         self.palette = palette
