@@ -1,7 +1,7 @@
 Note;Answer;Output
 Wake up;Yes;You went for a morning run around the town.
 Wake up;No;void
-Sure?;I've changed my mind;void
+Sure?;I've changed my mind;You went for a morning run around the town.
 Sure?;Yes;You decided not to follow your routine morning run today,\nso you decided to just make breakfast for all of your housemates.\nBut before that,\nyou have to ask them what would they like first
 Finish 1 run;Another run;You went for another run,\nNOW, you're really exhausted.\nYou run for a bath, quickly drink water, and make yourself something to eat.\nOnce you're done, You hit the sheets, and knockout for 3 hours.\n...\nIt's  12:23\nYou wake up and groggily walk up to see the Calender, to check if you have any work to do today.\nThere's a small writing in green pen,\nIt says...\nTechnology Event Day\nOh! That place!\nI was looking forward to hang out there with Karczel!
 Finish 1 run;The kitchen;You’ve made yourself a classic\nsandwich! It’s delicious!

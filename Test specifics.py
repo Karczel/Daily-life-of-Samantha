@@ -129,3 +129,110 @@ print('')
 print("Karczel's closet")
 for i in karczel_closet:
     print(i)
+
+
+# ---code draft---
+# previous choice  = []
+# previous choice.append(choose)
+# for i in previous choice
+#     if i in choice_list
+#     choice_list.pop(i)
+# while choice_list != []
+#     question loop
+#     for i in range(set):
+#         choice.append()
+#         if "Karczel House":
+#             a = str(i+1)
+#     if "karczel house" or a:
+#         break
+#       if "Do nothing" or '1':
+#         break
+#
+# festival = 1 -->loop?
+# if festival == 1:
+#     print(i['Fes T1'])
+#
+# if festival == 2:
+#     print(i['Fes T2'])
+#
+# if festival == 3:
+#     print(i['Fes T3'])
+
+# ---properly---
+choice = False
+time_list = 0
+previous_choice = []
+choice_list = []
+for i in Narrator_line:
+    if i['Note'] == 'What you want to do':
+        choice_list.append(i['Answer'])
+while choice_list != []:
+    while choice:
+        choose = ''
+        choice_number = []
+        for i in Question_line:
+            if i['Note'] == 'What you want to do':
+                slowprint(i['Question'])
+        for i in Narrator_line:
+            if i['Note'] == 'What you want to do':
+                choice_list.append(i['Answer'])
+        for i in previous_choice:
+            if i in choice_list:
+                choice_list.pop(i)
+        for i in enumerate(choice_list):
+            slowprint(f'{i[0]+1} {i[1]}')
+            if i[1] == "Kar H":
+                karczel_choice = str(i[0]+1)
+        choose = input()
+        if choose in choice_list:
+            break
+    if choose == "Do nothing":
+        break
+    if choose == 'K House':
+        break
+    previous_choice.append(choose)
+    # find number & str
+    for j in enumerate(choice_list):
+        if choose == j[1] or choose == str(j[0]+1):
+            for i in Narrator_line:
+                if i['Note'] == 'What you want to do':
+                    if i['Answer'] == j[1]:
+                        slowprint(i['Output'])
+
+# festival early
+if choose == 'Karczel House' or choose == karczel_choice:
+    times = 1
+    while choice_list != []:
+        while choice:
+            choose = ''
+            choice_number = []
+            for i in Question_line:
+                if i['Note'] == 'Festival':
+                    slowprint(i['Question'])
+            for i in Narrator_line:
+                if i['Note'] == 'Festival':
+                    choice_list.append(i['Answer'])
+            for i in Narrator_line:
+                if time == 1:
+                    if i['Note'] == 'Festival T1':
+                        choice_list.append(i['Answer'])
+                if time == 2:
+                    if i['Note'] == 'Festival T2':
+                        choice_list.append(i['Answer'])
+                if time == 3:
+                    if i['Note'] == 'Festival T3':
+                        choice_list.append(i['Answer'])
+            for i in previous_choice:
+                if i in choice_list:
+                    choice_list.pop(i)
+            for i in enumerate(choice_list):
+                slowprint(f'{i[0] + 1} {i[1]}')
+                if i[1] == "Kar H":
+                    karczel_choice = str(i[0] + 1)
+            choose = input()
+            if choose in choice_list:
+                break
+        times += 1
+        previous_choice.append(choose)
+
+
