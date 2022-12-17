@@ -47,11 +47,11 @@ You have .... (get player1 achievement list)
 ## Authors
 ### Artist, Coder, Author
 Nantawan Paramapooti, studying @Kasetart University in Software Engineering
-<br />[![IG: karczel_showcase[2.1]]](https://www.instagram.com/karczel_showcase/)
-<br />[![FB: Karczel[1.1]]](https://www.facebook.com/KarczelShowcase)
-<br />[![YT: Karczel's Shenanigans[4.1]]](https://www.youtube.com/channel/UCV34aIA-W9ltBzEhAfy5euA)
-<br />[![Artstation: Nantawan paramapooti][5.1]](https://www.artstation.com/karczel_showcase)
-<br />[![Github: Karczel[3.1]]](https://github.com/Karczel)
+<br />[![alt text][2.1]](https://www.instagram.com/karczel_showcase/)
+<br />[![alt text][1.1]](https://www.facebook.com/KarczelShowcase)
+<br />[![alt text][4.1]](https://www.youtube.com/channel/UCV34aIA-W9ltBzEhAfy5euA)
+<br />[![alt text][5.1]](https://www.artstation.com/karczel_showcase)
+<br />[![alt text][3.1]](https://github.com/Karczel)
 <br />
 ### Project overseer
 <br />Aj. Supaporn
@@ -60,10 +60,10 @@ Nantawan Paramapooti, studying @Kasetart University in Software Engineering
 Think of it like Stan Lee self-inserts, he's there, but he usually doesn't play any big part in his works.<br />
 <!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
 <!-- icons with padding -->
-[1.1]: http://i.imgur.com/tXSoThF.png (twitter icon with padding)
-[2.1]: http://i.imgur.com/P3YfQoD.png (facebook icon with padding)
-[3.1]: http://i.imgur.com/0o48UoR.png (github icon with padding)
-[4.1]: http://i.imgur.com/RQbS88X (youtube icon)
-[5.1]: https://www.pngwing.com/en/free-png-amsur (artstation icon)
+[1.1]: https://imgur.com/gallery/M6yBwxS (IG: karczel_showcase)
+[2.1]: http://i.imgur.com/P3YfQoD.png (FB: Karczel)
+[3.1]: http://i.imgur.com/0o48UoR.png (Github: Karczel)
+[4.1]: http://i.imgur.com/RQbS88X (YT: Karczel's Shenanigans)
+[5.1]: https://www.pngwing.com/en/free-png-amsur (Artstation: Nantawan paramapooti)
 
 <!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
