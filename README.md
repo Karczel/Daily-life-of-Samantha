@@ -47,7 +47,7 @@ You have .... (get player1 achievement list)
 ## Authors
 ### Artist, Coder, Author
 Nantawan Paramapooti, studying @Kasetart University in Software Engineering
-<br />Social media:
+<br />My Social media:
 [![alt text][1.1]](https://www.instagram.com/karczel_showcase/)
 [![alt text][2.1]](https://www.facebook.com/KarczelShowcase)
 [![alt text][4.1]](https://www.youtube.com/channel/UCV34aIA-W9ltBzEhAfy5euA)
