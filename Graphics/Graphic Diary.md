@@ -24,7 +24,7 @@ so, start a few days in advance of the deadline based on the complexity of your 
 --- Rounded time used to make graphic ---<br />
 1.The end = 4 whole days(+) <br />
 <br />
-[alt text][1.1]
+[alt text](https://i.imgur.com/vVzalPs.png)
 <br />
 --- Advice I haven't tried yet ---<br />
 * It would be fantastic to be able to put in the plotted drawing inside the turtle canvas as guides<br />
@@ -34,5 +34,3 @@ so, start a few days in advance of the deadline based on the complexity of your 
 
 Log 1, 3/12/2022
 managed to finish mid to Samantha body, I supposed this is only up to as much as the deadline allows me
-
-[1.1]: https://i.imgur.com/vVzalPs.png (The end plot path)
