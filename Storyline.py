@@ -434,7 +434,7 @@ while play != False:
                 if choose.lower() == 'yes' or choose == '1':
                     # Yes
                     for i in Narrator_line:
-                        if i['Note'] == 'See Karczel?':
+                         if i['Note'] == 'See Karczel?':
                             if i['Answer'] == 'Yes':
                                 slowprint(i['Output'])
                     while choice:

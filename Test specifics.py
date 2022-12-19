@@ -227,7 +227,7 @@ if choose == 'Karczel House' or choose == karczel_choice:
                     choice_list.pop(i)
             for i in enumerate(choice_list):
                 slowprint(f'{i[0] + 1} {i[1]}')
-                if i[1] == "Kar H":
+                if i[1] == "Karczel House":
                     karczel_choice = str(i[0] + 1)
             choose = input()
             if choose in choice_list:

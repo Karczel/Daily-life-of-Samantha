@@ -58,7 +58,6 @@ Nantawan Paramapooti, studying @Kasetart University in Software Engineering
 <br />Aj. Supaporn
 
 *Karczel in this story and in future works is not me directly, but is one of the fictional characters based on me interacting with other characters.<br />
-Think of it like Stan Lee self-inserts, he's there, but he usually doesn't play any big part in his works.<br />
 <!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
 <!-- icons with padding -->
 [1.1]: https://i.imgur.com/fuUckxA.png (IG: karczel_showcase)
