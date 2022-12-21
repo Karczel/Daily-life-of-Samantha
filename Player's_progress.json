@@ -1,0 +1,14 @@
+{
+    "player1":[
+        '''progress1''', '''progress2'''
+    ],
+    "player2":[
+        '''progress1''', '''progress2'''
+    ],
+    "player3":[
+        '''progress1''', '''progress2'''
+    ],
+    "player4":[
+        '''progress1''', '''progress2'''
+    ]
+}

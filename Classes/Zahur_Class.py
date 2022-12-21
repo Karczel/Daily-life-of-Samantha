@@ -1,21 +1,31 @@
 class Zahur:
     def __init__(self,location='???',hungry=True,palette={}):
-        self.location = location
-        self.hungry = hungry
-        self.palette = palette
+        self.__location = location
+        self.__hungry = hungry
+        self.__palette = palette
 
+    def add_items(self, items):
+        self.__items.append(items)
+    def use_item(self, items):
+        self.__items.remove(items)
     @property
-    def get_items(self):
-        return self.items
+    def items(self):
+        return self.__items
     @property
-    def get_location(self):
-        return self.location
+    def location(self):
+        return self.__location
+    @location.setter
+    def set_location(self,location):
+        self.__location = location
     @property
-    def get_hungry(self):
-        return self.hungry
+    def hungry(self):
+        return self.__hungry
+    @hungry.setter
+    def set_hungry(self,hungry):
+        self.__hungry = hungry
     @property
-    def get_palette(self):
-        return self.palette
+    def palette(self):
+        return self.__palette
 
     def __repr__(self):
         return f""

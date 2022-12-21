@@ -8,6 +8,7 @@ from Classes.Zahur_Class import Zahur
 from Classes.Karczel_Class import Karczel
 from Classes.Samantha_Class import Samantha
 from Classes.Clothing_Class import Clothing
+from Classes.Player_Class import Player
 
 Narrator_line_list = open("Story_Output/Narrator_line.csv", encoding="utf8").read().splitlines()
 b = [x.split(';') for x in Narrator_line_list]
@@ -69,7 +70,7 @@ def slowprint(s):
 def character_lines(character_name,s):
     f = copy.deepcopy(s)
     for i in f:
-        for k, v in i.items():
+        for k, v in i.__items():
             if k == 'Line':
                 a = character_name + ': ' + v
                 i.update({k: a})
@@ -81,11 +82,26 @@ Omisha_lines = character_lines('Omisha', Omisha_line)
 Zahur_lines = character_lines('Zahur', Zahur_line)
 table = []
 
+# players = earlier plays(up to 4 slots available)
 
-player = input("Player name: ")
+# display earlier logs
+player_list = {i[0]:i[1] for i in enumerate(players)}
+if player_list != {}:
+    for i in player_list:
+        print(i)
+
+# Get that player's achievements
+
+# Delete player
+
+# Clear all players
+
+# Build player
+player_name = input("Player name: ")
+player = Player(player_name)
 
 # Build characters
-sam = Samantha('Samantha', player, [], {}, False, 0, S_palette)
+sam = Samantha('Samantha', [], {}, False, 0, S_palette)
 karczel = Karczel([],1,{},False,'???',[],K_palette)
 omisha = Omisha([],'???',O_palette)
 zahur = Zahur('???', True, Z_palette)
@@ -464,7 +480,7 @@ while play != False:
                     elif choose.lower() == "karczel's handmade cloth" or choose == '2':
                         # k
                         for i in karczel.items:
-                            sam.change_clothing(i.type, i.name)
+                            sam.change_clothing(i.__type, i.__name)
                         for i in Narrator_line:
                             if i['Note'] == 'Choose clothing':
                                 if i['Answer'] == "Karczel's Handmade Cloth":
@@ -608,14 +624,14 @@ while play != False:
     if sam.exercise == True:
         slowprint(Acheievements['Run 1 time'])
         count += 1
-        if sam.run == 2:
+        if sam.__run == 2:
             slowprint(Acheievements['Run 2 times'])
     else:
         slowprint(Acheievements["Didn't Run today"])
 
     # about karczel
     if karczel.location != '???':
-        if '___Festival' in karczel.visited_locations:
+        if '___Festival' in karczel.__visited_locations:
             count += 1
             slowprint(Acheievements['Go to the Festival'])
             if karczel.see == 1:
@@ -625,7 +641,7 @@ while play != False:
             elif karczel.see == 3:
                 slowprint(Acheievements['See the 3rd Tournament'])
         if karczel.dinner != False:
-            if "Fancy restaurant" in karczel.visited_locations:
+            if "Fancy restaurant" in karczel.__visited_locations:
                 slowprint(Acheievements["Eat dinner at the fancy place"])
             else:
                 if "Omelette and rice" in sam.items:

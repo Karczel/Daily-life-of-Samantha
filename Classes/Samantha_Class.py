@@ -1,23 +1,22 @@
 class Samantha:
-    def __init__(self,name='Samantha',player_name='',items=[], clothing={},exercise=False,run=0,palette={}):
-        self.name = name
-        self.player = player_name
-        self.items = items
-        self.clothing = clothing
-        self.exercise = exercise
-        self.run = run
-        self.palette = palette
+    def __init__(self, name='Samantha', items=[], clothing={}, exercise=False, run=0, palette={}):
+        self.__name = name
+        self.__items = items
+        self.__clothing = clothing
+        self.__exercise = exercise
+        self.__run = run
+        self.__palette = palette
 
     def add_items(self, items):
-        self.items.append(items)
+        self.__items.append(items)
     def use_item(self, items):
-        self.items.remove(items)
+        self.__items.remove(items)
 
     def remove_clothing(self, clothing_type):
-        self.clothing.pop(clothing_type)
+        self.__clothing.pop(clothing_type)
 
     def wear_clothing(self, clothing_type, clothing):
-        self.clothing.update[clothing_type] = clothing
+        self.__clothing.update[clothing_type] = clothing
 
     def change_clothing(self, clothing_type, clothing):
         for k,v in self.clothing:
@@ -59,25 +58,24 @@ class Samantha:
                     self.wear_clothing(clothing_type, clothing)
 
     @property
-    def get_name(self):
-        return self.name
+    def name(self):
+        return self.__name
 
     @property
-    def get_playername(self):
-        return self.palette
+    def items(self):
+        return self.__items
 
     @property
-    def get_items(self):
-        return self.items
+    def clothing(self):
+        return self.__clothing
 
     @property
-    def get_clothing(self):
-        return self.clothing
+    def exercise(self):
+        return self.__exercise
+    @exercise.setter
+    def set_exercise(self, exercise):
+        self.__exercise = exercise
 
     @property
-    def get_exercise(self):
-        return self.exercise
-
-    @property
-    def get_palette(self):
-        return self.palette
+    def palette(self):
+        return self.__palette

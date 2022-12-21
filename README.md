@@ -1,6 +1,16 @@
 # Daily-life-of-Samantha
  This is a console-based role-playing game, where you'll be roleplaying as Samantha!<br />
 
+## Jump
+* Description
+* Getting started
+  * Needed programs and packages
+  * Installing
+  * Tutorial
+* Authors
+  * Artist, Coder, Author
+  * Project overseer
+
 ## Description
 See video:
 

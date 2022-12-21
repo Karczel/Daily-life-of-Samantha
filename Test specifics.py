@@ -63,7 +63,7 @@ def slowprint(s):
 def character_lines(character_name,s):
     f = copy.deepcopy(s)
     for i in f:
-        for k, v in i.items():
+        for k, v in i.__items():
             if k == 'Line':
                 a = character_name + ': ' + v
                 i.update({k: a})
