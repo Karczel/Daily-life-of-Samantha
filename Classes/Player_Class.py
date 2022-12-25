@@ -1,8 +1,41 @@
+import datetime
 class Player:
-    def __init__(self, name, progress, date):
+    def __init__(self, name, username, password, recover={}):
         self.__name = name
-        self.__progress = progress
-        self.__date = date
+        self.__username = username
+        self.__password = password
+        self.__recover = recover
+        self.__progress = {}
+        # {'1':[progresses], '2':[], '3':[], '4':[]}
+        self.__date = datetime.date.today()
+
+    def save_progress(self):
+
+        if self.date.isoweekday() == 1:
+            Day_of_week = 'Monday'
+        elif self.date.isoweekday() == 2:
+            Day_of_week = 'Tuesday'
+        elif self.date.isoweekday() == 3:
+            Day_of_week = 'Wednesday'
+        elif self.date.isoweekday() == 4:
+            Day_of_week = 'Thursday'
+        elif self.date.isoweekday() == 5:
+            Day_of_week = 'Friday'
+        elif self.date.isoweekday() == 6:
+            Day_of_week = 'Saturday'
+        elif self.date.isoweekday() == 7:
+            Day_of_week = 'Sunday'
+        # when check on last played/save load should have this:
+        print(f'Last played on {Day_of_week}, {self.date.day}/{self.date.month}/{self.date.year}')
+
+    def sign_up(self):
+        #
+    def log_in(self):
+        #
+
+    def recover_account(self):
+        #
+
 
     @property
     def name(self):
@@ -11,6 +44,18 @@ class Player:
     @name.setter
     def set_name(self, name):
         self.__name = name
+
+    @property
+    def username(self):
+        return self.__username
+
+    @property
+    def password(self):
+        return self.__password
+
+    @property
+    def recover(self):
+        return self.__recover
 
     @property
     def progress(self):

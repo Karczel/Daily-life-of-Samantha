@@ -186,10 +186,7 @@ while choice_list != []:
         choose = input()
         if choose in choice_list:
             break
-    if choose == "Do nothing":
-        break
-    if choose == 'K House':
-        break
+
     previous_choice.append(choose)
     # find number & str
     for j in enumerate(choice_list):
@@ -197,7 +194,21 @@ while choice_list != []:
             for i in Narrator_line:
                 if i['Note'] == 'What you want to do':
                     if i['Answer'] == j[1]:
-                        slowprint(i['Output'])
+                        if i['Output'] != 'void':
+                            slowprint(i['Output'])
+    if choose == "Do nothing":
+        break
+    elif choose == 'K House':
+        break
+    elif choose == "Omisha's room":
+        # seek out omisha?
+        while choice:
+            if choose == 'yes':
+                break
+            elif choose == 'no':
+
+            else:
+                print('Wrong answer')
 
 # festival early
 if choose == 'Karczel House' or choose == karczel_choice:
@@ -235,4 +246,6 @@ if choose == 'Karczel House' or choose == karczel_choice:
         times += 1
         previous_choice.append(choose)
 
+# seek omisha
+elif choose  == 'yes':
 
