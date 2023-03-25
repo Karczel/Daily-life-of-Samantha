@@ -9,8 +9,11 @@ class Player:
         # {'1':[progresses], '2':[], '3':[], '4':[]}
         self.__date = datetime.date.today()
 
-    def save_progress(self):
+    def save(self, new_date, save_point):
+        self.__date == new_date
+        self.__progress.append(save_point)
 
+    def last_saved(self):
         if self.date.isoweekday() == 1:
             Day_of_week = 'Monday'
         elif self.date.isoweekday() == 2:
@@ -28,8 +31,12 @@ class Player:
         # when check on last played/save load should have this:
         print(f'Last played on {Day_of_week}, {self.date.day}/{self.date.month}/{self.date.year}')
 
+    def continue_game(self):
+        #
+
     def sign_up(self):
         #
+
     def log_in(self):
         #
 
@@ -64,10 +71,6 @@ class Player:
     @property
     def date(self):
         return self.__date
-
-    def save(self, new_date, save_point):
-        self.__date == new_date
-        self.__progress.append(save_point)
 
     def __repr__(self):
         a = f'player: {self.name} last played: {self.date}'

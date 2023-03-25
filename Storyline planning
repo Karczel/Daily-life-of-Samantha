@@ -1,0 +1,125 @@
+All path as notes (/ for completed)
+wakeup/
+    yes/
+        Finish 1 run
+            Another run(break)
+                choose clothing
+                    K's
+                        festival
+                            gun
+                            a-ton
+                            T3
+                            ---
+                    M
+                        festival
+                            gun
+                            a-ton
+                            T3
+                            ---
+                    Run back
+                        dance?
+                            Yes
+                            No
+                            ---
+            Kitchen
+                take toast?
+                    yes
+                    no
+            Omisha's room
+            Zahur’s room
+                if kitchen before
+                    give toast?
+                tap on
+                headpat
+                Go back out
+                ---
+                if Omisha
+                    seek omi?
+                        yes(break)
+                            home?
+                                yes
+                                    no
+                                        adopt cat?
+                                            Yes
+                                            No
+                        no
+                        ---
+                else: where go next?(del past choice) (no break)
+                    Do nothing
+                    Zahur’s room
+                    Kitchen
+                        take toast?
+                            yes
+                            no
+                    Karczel's House
+                    Omisha's room
+                        if Do nothing
+                            quit
+                        elif Karczel's House(break)
+                            choose clothing
+                                K's
+                                    festival
+                                        gun
+                                        a-ton
+                                        T1-2-3
+                                            k dinner
+                                                yes
+                                                no
+                                                Make dinner
+                                                ---
+
+                                M
+                                    festival
+                                        gun
+                                        a-ton
+                                        T1-2-3
+                                            k dinner
+                                                yes
+                                                no
+                                                Make dinner
+                                                ---
+                                Run back
+                                    dance?
+                                        Yes
+                                        No
+                                        ---
+
+                        elif Omisha
+                            seek omi?
+                                yes(break)
+                                    home?
+                                        yes
+                                        no
+                                            adopt cat?
+                                                Yes
+                                                No
+                                no
+    ---
+
+    no
+        sure?
+            yes
+                No run
+                    Omisha’s room
+                    Zahur’s room
+                    Just make it when they're up
+                        if Omisha
+                            seek omi?
+                                yes(break)
+                                    home?
+                                        yes
+                                        no
+                                            adopt cat?
+                                                Yes
+                                                No
+                                no
+                        where go next?(del past choice) (no break)(repeat path)
+
+            no
+                Finish 1 run(repeat path)
+
+footnote:
+change storyline location from house to apartment
+Living near the adopting house
+So she can go back and stay in contact with the other orphans
+Cuz you're an orphan you're gonna receive any kindness

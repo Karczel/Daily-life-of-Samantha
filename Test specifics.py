@@ -7,6 +7,7 @@ from Classes.Zahur_Class import Zahur
 from Classes.Karczel_Class import Karczel
 from Classes.Samantha_Class import Samantha
 from Classes.Clothing_Class import Clothing
+from Classes.Player_Class import Player
 
 Narrator_line_list = open("Story_Output/Narrator_line.csv", encoding="utf8").read().splitlines()
 b = [x.split(';') for x in Narrator_line_list]
@@ -106,14 +107,14 @@ zahur = Zahur('???', True, Z_palette)
 sam_closet = [Clothing(i['type'],i['clothing'],i['color'][0],i['color'][1],i['color'][2]) for i in S_c]
 karczel_closet = [Clothing(i['type'],i['clothing'],i['color'][0],i['color'][1],i['color'][2]) for i in K_c]
 
-for i in sam_closet:
-    print(i)
+for a in sam_closet:
+    print(a)
 
 # Build attributes
 Karczel_items = []
-for i in sam_closet:
-    if 'Maid' in i.name:
-        Karczel_items.append(i)
+for a in sam_closet:
+    if 'Maid' in a.name:
+        Karczel_items.append(a)
 
 print(Karczel_items)
 
@@ -122,13 +123,13 @@ print('')
 print('--- Nerd details ---')
 print('')
 print("Sam's closet")
-for i in sam_closet:
-    print(i)
+for a in sam_closet:
+    print(a)
 print('')
 
 print("Karczel's closet")
-for i in karczel_closet:
-    print(i)
+for a in karczel_closet:
+    print(a)
 
 
 # ---code draft---
@@ -159,56 +160,82 @@ for i in karczel_closet:
 #     print(i['Fes T3'])
 
 # ---properly---
+# play = True
+# while play != False:
 choice = False
 time_list = 0
 previous_choice = []
 choice_list = []
-for i in Narrator_line:
-    if i['Note'] == 'What you want to do':
-        choice_list.append(i['Answer'])
+for a in Narrator_line:
+    if a['Note'] == 'What you want to do':
+        choice_list.append(a['Answer'])
 while choice_list != []:
     while choice:
         choose = ''
         choice_number = []
-        for i in Question_line:
-            if i['Note'] == 'What you want to do':
-                slowprint(i['Question'])
-        for i in Narrator_line:
-            if i['Note'] == 'What you want to do':
-                choice_list.append(i['Answer'])
-        for i in previous_choice:
-            if i in choice_list:
-                choice_list.pop(i)
-        for i in enumerate(choice_list):
-            slowprint(f'{i[0]+1} {i[1]}')
-            if i[1] == "Kar H":
-                karczel_choice = str(i[0]+1)
-        choose = input()
-        if choose in choice_list:
+        for a in Question_line:
+            if a['Note'] == 'What you want to do':
+                slowprint(a['Question'])
+        for b in Narrator_line:
+            if b['Note'] == 'What you want to do':
+                choice_list.append(b['Answer'])
+        for c in previous_choice:
+            if c in choice_list:
+                choice_list.pop(c)
+        for d in enumerate(choice_list):
+            slowprint(f'{d[0]}. {d[1]}')
+            if d[1] == "K H":
+                K_H = str(d[0])
+            if d[1] == "Omi":
+                Omi_R = str(d[0])
+        choose = input("Enter your choice: ")
+        for e in enumerate(choice_list):
+            if choose == e[1] or choose == e[0]:
+                break
+    for j in enumerate(choice_list):
+        if choose == j[1] or choose == str(j[0]):
+            for f in Narrator_line:
+                if f['Note'] == 'What you want to do':
+                    if f['Answer'] == j[1]:
+                        if f['Output'] != 'void':
+                            slowprint(f['Output'])
+        # find choice that matters
+        if j[1] == 'noth':
+            s_num = str(j[0])
             break
+        if j[1] == 'k h':
+            a_num = str(j[0])
+            break
+        if j[1] == 'omi':
+            b_num = str(j[0])
+            break
+
 
     previous_choice.append(choose)
     # find number & str
     for j in enumerate(choice_list):
-        if choose == j[1] or choose == str(j[0]+1):
-            for i in Narrator_line:
-                if i['Note'] == 'What you want to do':
-                    if i['Answer'] == j[1]:
-                        if i['Output'] != 'void':
-                            slowprint(i['Output'])
-    if choose == "Do nothing":
+        if choose == j[1] or choose == str(j[0]):
+            for a in Narrator_line:
+                if a['Note'] == 'What you want to do':
+                    if a['Answer'] == j[1]:
+                        if a['Output'] != 'void':
+                            slowprint(a['Output'])
+    if choose == "Do nothing" or choose == s_num:
         break
-    elif choose == 'K House':
+    elif choose == 'K House' or choose == a_num:
         break
-    elif choose == "Omisha's room":
+    elif choose == "Omisha's room" or choose == b_num:
         # seek out omisha?
         while choice:
+
             if choose == 'yes':
                 break
             elif choose == 'no':
 
             else:
                 print('Wrong answer')
+        if choose == 'yes':
+            break
 
 # festival early
 if choose == 'Karczel House' or choose == karczel_choice:
@@ -217,29 +244,29 @@ if choose == 'Karczel House' or choose == karczel_choice:
         while choice:
             choose = ''
             choice_number = []
-            for i in Question_line:
-                if i['Note'] == 'Festival':
-                    slowprint(i['Question'])
-            for i in Narrator_line:
-                if i['Note'] == 'Festival':
-                    choice_list.append(i['Answer'])
-            for i in Narrator_line:
+            for a in Question_line:
+                if a['Note'] == 'Festival':
+                    slowprint(a['Question'])
+            for a in Narrator_line:
+                if a['Note'] == 'Festival':
+                    choice_list.append(a['Answer'])
+            for a in Narrator_line:
                 if time == 1:
-                    if i['Note'] == 'Festival T1':
-                        choice_list.append(i['Answer'])
+                    if a['Note'] == 'Festival T1':
+                        choice_list.append(a['Answer'])
                 if time == 2:
-                    if i['Note'] == 'Festival T2':
-                        choice_list.append(i['Answer'])
+                    if a['Note'] == 'Festival T2':
+                        choice_list.append(a['Answer'])
                 if time == 3:
-                    if i['Note'] == 'Festival T3':
-                        choice_list.append(i['Answer'])
-            for i in previous_choice:
-                if i in choice_list:
-                    choice_list.pop(i)
-            for i in enumerate(choice_list):
-                slowprint(f'{i[0] + 1} {i[1]}')
-                if i[1] == "Karczel House":
-                    karczel_choice = str(i[0] + 1)
+                    if a['Note'] == 'Festival T3':
+                        choice_list.append(a['Answer'])
+            for a in previous_choice:
+                if a in choice_list:
+                    choice_list.pop(a)
+            for a in enumerate(choice_list):
+                slowprint(f'{a[0] + 1} {a[1]}')
+                if a[1] == "Karczel House":
+                    karczel_choice = str(a[0])
             choose = input()
             if choose in choice_list:
                 break

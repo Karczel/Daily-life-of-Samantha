@@ -134,23 +134,61 @@ for i in sam_closet:
 play = True
 while play != False:
     choice = False
-    previous_choice = []
     while choice:
         # wake up
         choice_list = []
         for i in Question_line:
             if i['Note'] == 'Wake up':
                 slowprint(i['Question'])
-        for i in Narrator_line:
-            if i['Note'] == 'Wake up':
-                choice_list.append(i['Answer'])
-        for i in enumerate(choice_list):
-            slowprint(f'{i[0] + 1} {i[1]}')
+        for a in Narrator_line:
+            if a['Note'] == 'Wake up':
+                choice_list.append(a['Answer'])
+        for b in enumerate(choice_list):
+            slowprint(f'{b[0]}. {b[1]}')
         choose = input("Enter your choice: ")
-        for i in range(len(choice_list)):
-            if choose == choice_list[i] or choose == str(i+1):
+        for c in enumerate(choice_list):
+            if choose == c[1] or choose == str(c[0]):
+                last_chosen = {c[0],str(c[1])}
                 break
         print('Wrong answer')
+    for j in enumerate(choice_list):
+        if choose == j[1] or choose == str(j[0]):
+            for v in Narrator_line:
+                if v['Note'] == 'Wake up':
+                    if v['Answer'] == j[1]:
+                        if v['Output'] != 'void':
+                            slowprint(v['Output'])
+        # find choice that matters
+        if j[1] == 'no':
+            no_num = str(j[0])
+    # no
+    if choose == 'no' or choose == no_num:
+        while choice:
+            # sure?
+            choice_list = []
+            for i in Question_line:
+                if i['Note'] == 'Sure?':
+                    slowprint(i['Question'])
+            for i in Narrator_line:
+                if i['Note'] == 'Sure?':
+                    choice_list.append(i['Answer'])
+            for i in enumerate(choice_list):
+                slowprint(f'{i[0]}. {i[1]}')
+            choose = input("Enter your choice: ")
+            for i in enumerate(choice_list):
+                if choose == i[1] or choose == str(i[0]):
+                    break
+            print('Wrong answer')
+        for j in enumerate(choice_list):
+            if choose == j[1] or choose == str(j[0]):
+                for i in Narrator_line:
+                    if i['Note'] == 'Sure?':
+                        if i['Answer'] == j[1]:
+                            if i['Output'] != 'void':
+                                slowprint(i['Output'])
+        if choose == 'no'
+    else:
+        # finish 1 run
 
     # The end
     exec('end_graphic')
