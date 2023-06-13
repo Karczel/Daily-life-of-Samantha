@@ -37,10 +37,10 @@ def open_palette_files(filename):
     palette_split = [x.split(',') for x in palette_list]
     return {i[0]: [Color(int(i[1]), int(i[2]), int(i[3]))] for i in palette_split}
 
-S_palette = open_palette_files("Graphics/Palette/Samantha_palette.csv")
-K_palette = open_palette_files("Graphics/Palette/Karczel_palette.csv")
-O_palette = open_palette_files("Graphics/Palette/Omisha_palette.csv")
-Z_palette = open_palette_files("Graphics/Palette/Zahur_palette.csv")
+S_palette = open_palette_files("Graphics/Honorary Trash Hall/Palette/Samantha_palette.csv")
+K_palette = open_palette_files("Graphics/Honorary Trash Hall/Palette/Karczel_palette.csv")
+O_palette = open_palette_files("Graphics/Honorary Trash Hall/Palette/Omisha_palette.csv")
+Z_palette = open_palette_files("Graphics/Honorary Trash Hall/Palette/Zahur_palette.csv")
 
 def open_clothing_files(filename):
     clothing_list = open(filename, encoding="utf8").read().splitlines()
